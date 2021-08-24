@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +20,9 @@
   #labelEmail {
     position: absolute;
     left: 110px; 
-	top: 415px; 
-    font-family: Arial, sans-serif;
+	  top: 415px; 
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
     font-size: 22px;
     color: white;
   }
@@ -29,10 +34,10 @@
     color: white;
     position: absolute;
     left: 190px; 
-	top: 410px;
-    border-radius: 20px / 35px;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
+	  top: 410px;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
     height: 40px;
     width: 400px;
     padding-left: 10px;
@@ -43,8 +48,9 @@
    #labelSenha {
     position: absolute;
     left: 110px; 
-	top: 475px;
-    font-family: Arial, sans-serif;
+	  top: 475px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
     font-size: 20px;
     color: white;
     
@@ -57,10 +63,10 @@
     color: white;
     position: absolute;
     left: 190px; 
-	top: 460px;
-    border-radius: 20px / 35px;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
+	  top: 460px;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
     height: 40px;
     width: 400px;
     padding-left: 10px;
@@ -68,3 +74,73 @@
     
     
   }
+
+  .start {
+    display: inline-flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 3px 75px;
+  	font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: #1b1744;
+    background-color: #fdd24f;
+    backface-visibility: hidden;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
+	
+    border-color: #1b1744;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+	
+    
+    position: absolute; 
+    left: 270px; 
+    top: 550px; 
+ }
+
+  button:hover{
+	transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+
+  .cadastrar {
+    display: inline-flex;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 5px 25px;
+  	font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 75px;
+    text-align: center;
+    text-decoration: none;
+    color: #1b1744;
+    background-color: #fdd24f;
+    backface-visibility: hidden;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
+	
+    border-color: #1b1744;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+	
+    position: absolute; 
+    left: 400px; 
+    top: 180px;
+  }
+    
+    #esqueciSenha {
+      color: white;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      text-decoration: none;
+
+      position: absolute; 
+      left: 470px; 
+      top: 510px;
+
+    }
+    
+  
