@@ -7,6 +7,7 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.compo
     WelcomeComponent,
     LoginComponent,
     CadastrarComponent,
-    EsqueciSenhaComponent
+    EsqueciSenhaComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

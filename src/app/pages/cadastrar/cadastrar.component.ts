@@ -12,4 +12,8 @@ export class CadastrarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  cadastrar() {
+
+  }
+
 }

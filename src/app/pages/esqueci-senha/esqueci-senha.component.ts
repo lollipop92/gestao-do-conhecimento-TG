@@ -12,4 +12,8 @@ export class EsqueciSenhaComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  esqueciSenha() {
+    
+  }
+
 }
