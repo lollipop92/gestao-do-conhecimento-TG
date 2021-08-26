@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700;800;900&display=swap');
+@import url(//db.onlinewebfonts.com/c/1fed4454352f201d52b65ca5480afb2d?family=Playlist);
 
 * {
     margin: 0;
@@ -8,14 +10,12 @@
   }
   
   section {
-    display: table;
-    width: 100%;
-  }
-
-  .height-100 {
-    background-image: url(../../../assets/imgs/login.JPG);
+    background-image: url(../../../assets/imgs/welcome.JPG);
+    background-attachment: scroll;
+	  display: block;    
     height: 100vh;
-    background-repeat: no-repeat;
+	  background-repeat: no-repeat;	
+	  background-size: cover;
   }
 
   #labelEmail {
@@ -26,6 +26,8 @@
     font-weight: 700;
     font-size: 22px;
     color: white;
+    
+    
   }
 
   #email {
@@ -104,6 +106,18 @@
 
   button:hover{
 	transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+
+  #learn, #how {
+	  font-family: 'Spartan', sans-serif;
+	  font-weight: 800;
+	  font-size: 80px;
+	  color: white;
+	  position: relative; 
+	  top: 150px;
+	  left: 90px;
+    text-shadow: 6px 6px 1px #425261;	
+    width: max-content;  
   }
 
   .cadastrar {

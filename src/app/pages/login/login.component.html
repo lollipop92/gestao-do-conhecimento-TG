@@ -7,8 +7,10 @@
     <title>Login</title>
 </head>
 <body>
-    <section class="height-100">
+    <section id="main_content">
         <div class="content">
+            <p id="learn">FAZER</p>
+            <p id="how">LOGIN</p>
             <button routerLink="/cadastrar" class="cadastrar">Cadastrar-se</button>
             <label id="labelEmail" for="email">EMAIL</label>
             <input type="email" name="email" id="email">
@@ -16,8 +18,7 @@
             <label id="labelSenha" for="senha">SENHA</label>
             <input type="password" name="senha" id="senha">
             <a id="esqueciSenha" routerLink="/esqueciSenha">Esqueci minha senha</a>
-            <button class="start" type="submit" (click)="fazerLogin()">START</button>
-                   
+            <button class="start" type="submit" (click)="fazerLogin()">START</button>                               
         </div>
       </section>
 </body>

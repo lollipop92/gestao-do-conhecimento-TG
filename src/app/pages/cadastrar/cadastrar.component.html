@@ -7,7 +7,8 @@
     <title>Cadastrar</title>
 </head>
 <body>
-    <section class="height-100">
+    <section id="main_content">
+        <h1>CADASTRO</h1>
         <div class="content">
             <label id="labelEmail" for="email">EMAIL</label>
             <input type="email" name="email" id="email">
@@ -20,7 +21,8 @@
             <br>
             <label id = "labelCargo" for="cargo">CARGO</label>   
             <input type="text" name="cargo" id="cargo">
-            <button class="start" type="submit" (click)="cadastrar()">START</button>           
+            <button class="start" type="submit" (click)="cadastrar()">START</button>
+            <button class="exit" type="button" routerLink="/login">SAIR</button>           
         </div>
       </section>
 </body>
