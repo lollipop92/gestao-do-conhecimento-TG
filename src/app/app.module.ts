@@ -8,7 +8,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { MenuComponent } from './pages/menu/menu.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,9 @@ import { MenuComponent } from './pages/menu/menu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

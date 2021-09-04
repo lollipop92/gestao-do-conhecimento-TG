@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <section id="main_content">
-        <div class="content">
-            <p id="learn">FAZER</p>
-            <p id="how">LOGIN</p>
-            <button routerLink="/cadastrar" class="cadastrar">Cadastrar-se</button>
-            <label id="labelEmail" for="email">EMAIL</label>
-            <input type="email" name="email" id="email">
-            <br>
-            <label id="labelSenha" for="senha">SENHA</label>
-            <input type="password" name="senha" id="senha">
-            <a id="esqueciSenha" routerLink="/esqueciSenha">Esqueci minha senha</a>
-            <button class="start" type="submit" (click)="fazerLogin()">START</button>                               
+<div class="main_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="container-fluid px-0">
+                    <div class="row">
+                        <div class="col-12 col-md-7 mb-4">
+                            <p class="title"><span>FAZER</span><br><span>LOGIN</span></p>
+                        </div>
+                        <div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+                            <button routerLink="/cadastrar" class="cadastrar">Cadastrar-se</button>
+                        </div>
+                        <div class="col-12">
+                            <div class=" campo w-100 d-flex flex-row">
+                                <label for="email">EMAIL</label>
+                                <input [(ngModel)]="email" type="email" name="email" autofocus required placeholder="example@example.com">
+                            </div>
+                            <div class="campo w-100 d-flex flex-row">
+                                <label for="senha">SENHA</label>
+                                <input [(ngModel)]="password" type="password" name="senha" required placeholder="Digite sua senha"> 
+                            </div> 
+                        </div>
+                        <div class="col-12 d-flex flex-column align-items-center">
+                            <a class="ms-auto" id="esqueciSenha" routerLink="/esqueciSenha">Esqueci minha senha</a>
+                            <button class="start" type="submit" (click)="fazerLogin()">START</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </section>
-</body>
-</html>
+    </div>                              
+</div>

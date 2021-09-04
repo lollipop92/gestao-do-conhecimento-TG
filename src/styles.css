@@ -1,3 +1,25 @@
-body{
-    margin:0px;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700;800;900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/1fed4454352f201d52b65ca5480afb2d?family=Playlist');
+
+html, body, section {
+  margin: 0;
+  padding: 0;
 }
+
+
+
+.title{
+	margin: 0;
+}
+.title span{
+  font-family: 'Spartan', sans-serif;
+  font-weight: 800;
+  font-size: 80px;
+  color: white;
+  line-height: 1.2em;
+}
+
+

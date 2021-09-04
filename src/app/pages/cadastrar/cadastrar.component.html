@@ -1,30 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar</title>
-</head>
-<body>
-    <section id="main_content">
-        <h1>CADASTRO</h1>
-        <div class="content">
-            <label id="labelEmail" for="email">EMAIL</label>
-            <input type="email" name="email" id="email">
-            <br>
-            <label id="labelSenha" for="senha">SENHA</label>
-            <input type="password" name="senha" id="senha">
-            <br>
-            <label id="labelSetor" for="setor">SETOR</label>   
-            <input type="text" name="setor" id="setor">
-            <br>
-            <label id = "labelCargo" for="cargo">CARGO</label>   
-            <input type="text" name="cargo" id="cargo">
-            <button class="start" type="submit" (click)="cadastrar()">START</button>
-            <button class="exit" type="button" routerLink="/login">SAIR</button>           
-        </div>
-      </section>
-</body>
-</html>
+<section id="main_content">
+    <h1>CADASTRO</h1>
+    <form class="content" action="">
+        <label id="labelEmail" for="email">EMAIL</label>
+        <input type="email" name="email" id="email" autofocus required placeholder="Informe seu email coorporativo">
+        <br>
+        <label id="labelSenha" for="senha">SENHA</label>
+        <input type="password" name="senha" id="senha" required placeholder="Informe sua senha de acesso" minlength="4">
+        <br>
+        <label id="labelSetor" for="setor">SETOR</label>   
+        <input type="text" name="setor" id="setor" required placeholder="Informe seu setor ">
+        <br>
+        <label id = "labelCargo" for="cargo">CARGO</label>   
+        <input type="text" name="cargo" id="cargo" required placeholder="Informe o seu cargo">
+        <button class="start" type="submit"(click)="cadastrar()">START</button>
+        <button class="exit" type="button" routerLink="/login">SAIR</button>           
+    </form>
+</section>
+
+
 

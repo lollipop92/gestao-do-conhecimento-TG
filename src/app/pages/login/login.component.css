@@ -1,161 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700;800;900&display=swap');
-@import url(//db.onlinewebfonts.com/c/1fed4454352f201d52b65ca5480afb2d?family=Playlist);
+.main_content {
+  background-image: url(../../../assets/imgs/welcome.JPG);
+  display: flex;    
+  flex-direction: column;
+  height: 100vh;
+  background-repeat: no-repeat;	
+  background-size: cover;
+}
+.container{
+  padding-top: 125px;
+  height:100vh;
+}
 
-* {
-    margin: 0;
-    padding: 0;
-  }
-  
-  section {
-    background-image: url(../../../assets/imgs/welcome.JPG);
-    background-attachment: scroll;
-	  display: block;    
-    height: 100vh;
-	  background-repeat: no-repeat;	
-	  background-size: cover;
-  }
+.title span{
+  text-shadow: 6px 6px 1px #425261;
+}
 
-  #labelEmail {
-    position: absolute;
-    left: 110px; 
-	  top: 415px; 
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    color: white;
-    
-    
-  }
+#labelEmail {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+}
+.campo{
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom:16px;
+}
+.campo label{
+  width:100px;  
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+  line-height: 40px;
+}
+.campo input{
+  width: 100%;
+  padding-left: 16px;
 
-  #email {
+  border:2px #fed151 solid;
+  background: transparent;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  height: 40px;
+  padding-left: 10px;
+  outline: none; 
+}
 
-    border:2px #fed151 solid;
-    background: transparent;
-    color: white;
-    position: absolute;
-    left: 190px; 
-	  top: 410px;
-    border-radius: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    height: 40px;
-    width: 400px;
-    padding-left: 10px;
-    outline: none;    
-        
-  }
+#labelSenha {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+}
 
-   #labelSenha {
-    position: absolute;
-    left: 110px; 
-	  top: 475px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-size: 20px;
-    color: white;
-    
-  }
-
-  #senha {
-    
-    border:2px #fed151 solid;
-    background: transparent;
-    color: white;
-    position: absolute;
-    left: 190px; 
-	  top: 460px;
-    border-radius: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    height: 40px;
-    width: 400px;
-    padding-left: 10px;
-    outline: none; 
-    
-    
-  }
-
-  .start {
-    display: inline-flex;
+.start {
+  display: inline-flex;
   	align-items: center;
   	justify-content: center;
   	padding: 3px 75px;
   	font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 35px;
-    text-align: center;
-    text-decoration: none;
-    color: #1b1744;
-    background-color: #fdd24f;
-    backface-visibility: hidden;
-    border: 3px solid transparent;
-    border-radius: 40px;
-    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
-	
-    border-color: #1b1744;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-	
-    
-    position: absolute; 
-    left: 270px; 
-    top: 550px; 
- }
+	font-weight: 600;
+	font-size: 34px;
+	text-align: center;
+	text-decoration: none;
+	color: #1b1744;
+	background-color: #fdd24f;
+	backface-visibility: hidden;
+	border: 5px solid transparent;
+	border-radius: 40px;
+	box-shadow: 6px 6px 0px 5px rgba(253, 210, 79, 1);
+	border-color: #1b1744;
+	transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  margin-top:16px;
+}
 
-  button:hover{
-	transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  }
+button:hover{
+transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
 
-  #learn, #how {
-	  font-family: 'Spartan', sans-serif;
-	  font-weight: 800;
-	  font-size: 80px;
-	  color: white;
-	  position: relative; 
-	  top: 150px;
-	  left: 90px;
-    text-shadow: 6px 6px 1px #425261;	
-    width: max-content;  
-  }
-
-  .cadastrar {
-    display: inline-flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 5px 25px;
-  	font-family: 'Dancing Script', cursive;
-    font-weight: 600;
-    font-size: 75px;
-    text-align: center;
-    text-decoration: none;
-    color: #1b1744;
-    background-color: #fdd24f;
-    backface-visibility: hidden;
-    border: 3px solid transparent;
-    border-radius: 40px;
-    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
-	
-    border-color: #1b1744;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-	
-    position: absolute; 
-    left: 400px; 
-    top: 180px;
-  }
-    
-    #esqueciSenha {
-      color: white;
-      font-family: 'Ubuntu', sans-serif;
-      font-weight: bold;
-      font-size: 18px;
-      text-decoration: none;
-
-      position: absolute; 
-      left: 470px; 
-      top: 510px;
-
-    }
-    
+.cadastrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 25px;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-size: 62px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1744;
+  background-color: #fdd24f;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  position: absolute; 
+}
+  
+#esqueciSenha {
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+}
+  
   
