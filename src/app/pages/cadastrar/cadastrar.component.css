@@ -41,39 +41,53 @@
     
   }
 
-  #labelEmail {
+  #labelNome {
     top: 210px;
     left: 780px;
   }
-  #email {
+  #nome {
     top: 200px;
     left:860px;
   }
 
-  #labelSenha {
+  #labelEmail {
     top: 265px;
     left: 780px;
   }
-  #senha {
+  #email {
     top: 255px;
     left:860px;
   }
 
-  #labelSetor {
+  #labelSenha {
     top: 315px;
     left: 780px;
   }
-  #setor {
+  #senha {
     top: 310px;
     left:860px;
   }
 
+  #senhaConfirmar {
+    top: 365px;
+    left:860px;
+  }
+
+  #labelSetor {
+    top: 425px;
+    left: 780px;
+  }
+  #setor {
+    top: 420px;
+    left:860px;
+  }
+
   #labelCargo {
-    top: 370px;
+    top: 480px;
     left: 780px;
   }
   #cargo {
-    top: 365px;
+    top: 475px;
     left:860px;
   }
 
@@ -100,7 +114,7 @@
     
     position: absolute; 
     left: 920px; 
-    top: 450px; 
+    top: 540px; 
  }
 
   button:hover{

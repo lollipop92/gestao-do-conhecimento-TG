@@ -4,15 +4,22 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class CadastroService {
 
   constructor(private http : HttpClient) {}
 
-  login(email:string, password:string){
+  cadastro(nome: string, email:string, password:string, setor:string, cargo:string ){
+       
     let body = {
-      "email":"pinafi@gmail.com",
-      "senha":"1992-12-17"      
+      "nome": nome,
+      "email": email,
+      "senha": password,
+      "setor": setor,
+      "cargo": cargo
     };
+        
     return this.http.post('http://localhost:8050/api/v1/usuario',body,{headers:{contentType:"application/json"}}).toPromise()
+    
   }
+  
 }

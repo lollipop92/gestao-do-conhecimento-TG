@@ -1,17 +1,21 @@
 <section id="main_content">
     <h1>CADASTRO</h1>
     <form class="content" action="">
+        <label id="labelNome" for="nome">NOME</label>
+        <input type="nome" [(ngModel)]= "nome" name="nome" id="nome" autofocus required placeholder="Informe seu nome">
+        <br>
         <label id="labelEmail" for="email">EMAIL</label>
-        <input type="email" name="email" id="email" autofocus required placeholder="Informe seu email coorporativo">
+        <input type="email" [(ngModel)]= "email" name="email" id="email" autofocus required placeholder="Informe seu email coorporativo">
         <br>
         <label id="labelSenha" for="senha">SENHA</label>
-        <input type="password" name="senha" id="senha" required placeholder="Informe sua senha de acesso" minlength="4">
+        <input type="password" [(ngModel)]="senha" name="senha" id="senha" required placeholder="Informe sua senha de acesso">
+        <input type="text" [(ngModel)]="senhaConfirmar" name="senhaConfirmar" id="senhaConfirmar" required placeholder="Confirme sua senha de acesso">
         <br>
         <label id="labelSetor" for="setor">SETOR</label>   
-        <input type="text" name="setor" id="setor" required placeholder="Informe seu setor ">
+        <input type="text" [(ngModel)]="setor"  name="setor" id="setor" required placeholder="Informe seu setor ">
         <br>
         <label id = "labelCargo" for="cargo">CARGO</label>   
-        <input type="text" name="cargo" id="cargo" required placeholder="Informe o seu cargo">
+        <input type="text" [(ngModel)]="cargo" name="cargo" id="cargo" required placeholder="Informe seu cargo">
         <button class="start" type="submit"(click)="cadastrar()">START</button>
         <button class="exit" type="button" routerLink="/login">SAIR</button>           
     </form>
