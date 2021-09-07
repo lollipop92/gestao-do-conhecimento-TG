@@ -1,6 +1,6 @@
 <section id="main_content">
     <h1>MEU USUÁRIO</h1>
-    <form class="content" #f="ngForm" >
+    <form class="content" #f="ngForm" (ngSubmit)="editarUsuario()">        
         <div class="form-group">
             <label id="labelNome" for="nome">NOME</label>     
             <input type="text" [(ngModel)]= "usuario.nome" required 
@@ -12,28 +12,44 @@
         </div>  
         <div class="form-group">
             <label id="labelEmail" for="email">EMAIL</label>
-            <input type="email" [(ngModel)]= "usuario.email" required email
+            <input type="email" [(ngModel)]= "usuario.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             placeholder="Informe seu email coorporativo" 
             name="email" id="email" #email="ngModel">
-            <div *ngIf="!email.valid && email.touched" id="erroEmail">
+            <div *ngIf="email.errors && (!email.valid && email.touched)">
+                <div *ngIf="email.errors.required" id="erroEmail">
+                Email é obrigatório
+                </div>
+                <div *ngIf="email.errors.pattern" id="erroEmail">
                 Email inválido
-            </div>       
+                </div>
+            </div>      
         </div >
         <div class="form-group">
             <label id="labelSenha" for="senha">SENHA</label>
             <input type="password" [(ngModel)]="usuario.senha" 
-            required placeholder="Informe sua senha de acesso" 
+            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            placeholder="Informe sua senha de acesso" 
             name="senha" id="senha" #senha="ngModel">
             <input type="password" [(ngModel)]="usuario.senhaConfirmar" 
-            required placeholder="Confirme sua senha de acesso" 
+            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            placeholder="Confirme sua senha de acesso" 
             name="senhaConfirmar" id="senhaConfirmar" #senhaConfirmar="ngModel">
-            <div *ngIf="!senha.valid && senha.touched" id="erroSenha">
-                Senha é obrigatório                
-            </div>
+            <div *ngIf="senha.errors && (!senha.valid && senha.touched)">
+                <div *ngIf="senha.errors.required" id="erroSenha">
+                Senha é obrigatório
+                </div>
+                <div *ngIf="senha.errors.pattern" id="erroSenha2">
+                Deve conter número, letra maiúscula e minúscula e pelo menos 8 caracteres
+                </div>
+            </div>            
             <div *ngIf="senha.valid && senha.touched && !senhaConfirmar.valid && senhaConfirmar.touched" id="erroSenha">
-                Confirmar senha é obrigatório
-            </div>                 
+                Confirmar senha é obrigatório                
+            </div>             
+            <div *ngIf="senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)" id="erroSenha">      
+                 As senhas devem ser idênticas 
+            </div>                            
         </div>
+
         <div class="form-group">
             <label id="labelSetor" for="setor">SETOR</label>   
             <input type="text" [(ngModel)]="usuario.setor"  
@@ -51,12 +67,18 @@
         </div> 
         <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
             Cargo é obrigatório
-        </div>  
-        <button class="start" type="submit" [disabled]="!f.valid">SALVAR</button> 
-        <button class="edit" type="button" (click)="editUser()" >EDITAR</button>               
+        </div> 
+        <button class="start" type="submit" [disabled]="!f.valid || senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)"> SALVAR </button>                
     </form>
-    <button class="exit" type="button" routerLink="/menu">MENU</button>
+    <div *ngIf="f.valid">
+        <small id="sucesso">{{mensagemSucesso}}</small>
+        <!--<small id="erro">{{mensagemErro.message}}</small>-->      
+    </div> 
+    <!--<button class="edit" type="button" (click)="editUser()" >EDITAR</button>-->
+    <button class="exit" type="button" routerLink="/login">SAIR</button>
+    <button class="menu" type="button" routerLink="/menu">MENU</button>
 </section>
+
 
 
 

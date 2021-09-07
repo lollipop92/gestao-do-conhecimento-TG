@@ -1,244 +1,300 @@
 section {
-    background-image: url(../../../assets/imgs/cadastro.JPG);
-    background-attachment: scroll;
-	  display: block;    
-    height: 100vh;
-	  background-repeat: no-repeat;	
-	  background-size: cover;
-  }
-
-  h1 {
-    font-family: 'Spartan', sans-serif;
-	  font-weight: 800;
-	  font-size: 40px;
-	  color:#9ecfc9;
-	  position: relative; 
-	  top: 60px;
-	  left: 850px;
-    width: max-content;
-  }
-
-  label {
-    position: absolute;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-size: 22px;
-    color: white;
-  }
-
-  input {
-    border:2px #fed151 solid;
-    background: transparent;
-    color: white;
-    position: absolute;
-    border-radius: 10px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    height: 40px;
-    width: 400px;
-    padding-left: 10px;
-    outline: none;
-    
-  }
-  
-  #nome {
-    top: 150px;
-    left:860px;
-  }
-
-  #labelNome {
-    top: 150px;
-    left: 780px;
-  }
-
-  #erroNome {
-    position: absolute;
-    top: 187px;
-    left:865px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: red;
-  }
-  
-  #email {
-    top: 215px;
-    left:860px;
-  }
-
-  #labelEmail {
-    top: 215px;
-    left: 780px;
-  }
-
-  #erroEmail {
-    position: absolute;
-    top: 253px;
-    left:865px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: red;
-  }
-  
-
-  #labelSenha {
-    top: 280px;
-    left: 780px;
-  }
-  #senha {
-    top: 280px;
-    left:860px;
-  }
-
-  #senhaConfirmar {
-    top: 325px;
-    left:860px;
-  }
-
-  #erroSenha {
-    position: absolute;
-    top: 365px;
-    left:865px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: red;
-  }
-
-  #labelSetor {
-    top: 390px;
-    left: 780px;
-  }
-  #setor {
-    top: 390px;
-    left:860px;
-  }
-  #erroSetor {
-    position: absolute;
-    top: 426px;
-    left:865px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: red;
-  }
-
-  #labelCargo {
-    top: 455px;
-    left: 780px;
-  }
-  #cargo {
-    top: 455px;
-    left:860px;
-  }
-  #erroCargo {
-    position: absolute;
-    top: 495px;
-    left:865px;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 18px;
-    color: red;
-  }
-
-  .start {
-    display: inline-flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 3px 55px;
-  	font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #1b1744;
-    background-color: #fdd24f;
-    backface-visibility: hidden;
-    border: 3px solid transparent;
-    border-radius: 40px;
-    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
-	
-    border-color: #1b1744;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-	
-    
-    position: absolute; 
-    right: 100px; 
-    top: 540px; 
- }
-
-  button:hover{
-	transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  }
-
-  .edit {
-    display: inline-flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 3px 55px;
-  	font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    text-decoration: none;
-    color: #1b1744;
-    background-color: #fdd24f;
-    backface-visibility: hidden;
-    border: 3px solid transparent;
-    border-radius: 40px;
-    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
-	
-    border-color: #1b1744;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-	
-    
-    position: absolute; 
-    left: 800px; 
-    top: 540px; 
- }
-
-  button:hover{
-	transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
-  }
-
-  .exit {
-    display: inline-flex;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 3px 35px;
-  	font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 25px;
-    text-align: center;
-    text-decoration: none;
-    color: #1b1744;
-    background-color: #9ecfc9;
-    backface-visibility: hidden;
-    border: 3px solid transparent;
-    border-radius: 40px;
-    box-shadow: 6px 6px 0px 1px #1b1744;;
-	
-    border-color: #1b1744;
-    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-	
-    
-    position: absolute; 
-    right: 25px; 
-    top: 20px; }
-
-    .ng-invalid.ng-touched:not(form) {
-      border: 3px solid red
-
-    }
-
-    button:disabled,
-    button[disabled]{
-      color: #1b1744;
-      background-color: #cccccc;
-      backface-visibility: hidden;
-      border: 3px solid transparent;
-      border-radius: 40px;
-      box-shadow: 6px 6px 0px 1px #999999;
-    
-      border-color: #1b1744;
-      transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-      cursor: not-allowed;
+  background-image: url(../../../assets/imgs/cadastro.JPG);
+  background-attachment: scroll;
+  display: block;    
+  height: 100vh;
+  background-repeat: no-repeat;	
+  background-size: cover;
 }
 
- 
+h1 {
+  font-family: 'Spartan', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  color:#9ecfc9;
+  position: relative; 
+  top: 60px;
+  left: 850px;
+  width: max-content;
+}
+
+label {
+  position: absolute;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+}
+
+input {
+  border:2px #fed151 solid;
+  background: transparent;
+  color: white;
+  position: absolute;
+  border-radius: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  height: 40px;
+  width: 400px;
+  padding-left: 10px;
+  outline: none;
+  
+}
+
+#nome {
+  top: 150px;
+  left:860px;
+}
+
+#labelNome {
+  top: 150px;
+  left: 780px;
+}
+
+#erroNome {
+  position: absolute;
+  top: 187px;
+  left:865px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#email {
+  top: 215px;
+  left:860px;
+}
+
+#labelEmail {
+  top: 215px;
+  left: 780px;
+}
+
+#erroEmail {
+  position: absolute;
+  top: 253px;
+  left:865px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#erroEmail1 {
+  position: absolute;
+  top: 253px;
+  left:865px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+
+#labelSenha {
+  top: 280px;
+  left: 780px;
+}
+#senha {
+  top: 280px;
+  left:860px;
+}
+
+#senhaConfirmar {
+  top: 325px;
+  left:860px;
+}
+
+#erroSenha {
+  position: absolute;
+  top: 365px;
+  left:865px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+  
+}
+#erroSenha2 {
+  position: absolute;
+  top: 365px;
+  left:725px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#labelSetor {
+  top: 390px;
+  left: 780px;
+}
+#setor {
+  top: 390px;
+  left:860px;
+}
+#erroSetor {
+  position: absolute;
+  top: 426px;
+  left:865px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#labelCargo {
+  top: 455px;
+  left: 780px;
+}
+#cargo {
+  top: 455px;
+  left:860px;
+}
+#erroCargo {
+  position: absolute;
+  top: 495px;
+  left:865px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#erro {
+  position: absolute;
+  top: 500px;
+  left:825px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+#sucesso {
+  position: absolute;
+  top: 500px;
+  left:895px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+.start {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 75px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1744;
+  background-color: #fdd24f;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
+
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+
+  
+  position: absolute; 
+  left: 920px; 
+  top: 540px; 
+}
+
+button:hover{
+transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+
+.exit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1744;
+  background-color: #9ecfc9;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px #1b1744;;
+
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+
+  
+  position: absolute; 
+  right: 25px; 
+  top: 20px; }
+
+  .ng-invalid.ng-touched:not(form) {
+    border: 3px solid red
+
+  }
+
+  button:disabled,
+  button[disabled]{
+    color: #1b1744;
+    background-color: #cccccc;
+    backface-visibility: hidden;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    box-shadow: 6px 6px 0px 1px #999999;
+  
+    border-color: #1b1744;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+    cursor: not-allowed;
+}
+
+.edit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 55px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1744;
+  background-color: #fdd24f;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1);
+
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+
+  
+  position: absolute; 
+  left: 800px; 
+  top: 540px; 
+}
+
+.menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 22px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1744;
+  background-color: #fdd24f;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px #1b1744;
+
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  
+  position: absolute; 
+  right: 25px; 
+  top: 80px }
+
+

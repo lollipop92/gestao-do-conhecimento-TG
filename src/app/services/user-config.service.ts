@@ -1,25 +1,36 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { GlobalConstant } from '../model/globalConstants';
+import { Usuario } from '../model/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserConfigService {
 
-  constructor(private http : HttpClient) { }
+  apiUrl = "http://localhost:8050/api/v1"
+  httpOptions = {
+    headers : new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
 
-  getUser( ){
-       
-    let body = {
-      "nome": 'teste1',
-      "email": 'testeemail',
-      "senha": 'testepassword',
-      "setor": 'testesetor',
-      "cargo": 'testecargo'
-    };
-        
-       return body
+  constructor(private _http : HttpClient) {}
+
+  public getUserFromRemote(usuario:Usuario):Observable<any>{
+          
+    return this._http.get<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado);
+
+  }
+
+  //Não tá funcionando
+  public editUserFromRemote(usuario:Usuario):Observable<any>{
     
+    console.log(GlobalConstant.usuarioLogado)
+    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado + "?nome=" + usuario.nome, null);
+    
+
   }
 
 }

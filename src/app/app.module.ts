@@ -11,6 +11,9 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserConfigComponent } from './pages/user-config/user-config.component';
+import { BaseConhecimentoComponent } from './pages/base-conhecimento/base-conhecimento.component';
+import { AprendizagemComponent } from './pages/aprendizagem/aprendizagem.component';
+import { MonitorComponent } from './pages/monitor/monitor.component';
 
 
 
@@ -23,6 +26,9 @@ import { UserConfigComponent } from './pages/user-config/user-config.component';
     EsqueciSenhaComponent,
     MenuComponent,
     UserConfigComponent,
+    BaseConhecimentoComponent,
+    AprendizagemComponent,
+    MonitorComponent,
   
   ],
   imports: [

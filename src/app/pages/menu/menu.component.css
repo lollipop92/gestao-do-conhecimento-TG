@@ -12,6 +12,96 @@
     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
     }
 
+    img:hover {
+      transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+    }
+
+    #baseConhecimento {
+      position: absolute;
+      top: 30%;
+      left: 15%;
+      width: 180px;       
+    }
+
+    #baseConhecimentoTitulo {
+      position: absolute;
+      top: 55%;
+      left: 12%; 
+      width: 280px;
+      text-align: center;
+      font-size: 25px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;      
+    }
+
+    #baseConhecimentoDescricao {
+      position: absolute;
+      top: 60%;
+      left: 15%;
+      width: 200px;
+      text-align: center;
+      font-size: 15px;
+      margin-top: 10px;
+      font-family: 'Ubuntu', sans-serif;      
+    }
+
+    #aprendizagem {
+      position: absolute; 
+      top: 28%;
+      left: 45%;
+      width: 180px  
+    }
+    #aprendizagemTitulo {
+      position: absolute;
+      top: 55%;
+      left: 45%; 
+      width: 180px;
+      text-align: center;
+      font-size: 25px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;      
+    }
+
+    #aprendizagemDescricao {
+      position: absolute;
+      top: 60%;
+      left: 42%;
+      width: 250px;
+      text-align: center;
+      font-size: 15px;
+      margin-top: 10px;
+      font-family: 'Ubuntu', sans-serif;      
+    }
+
+    #monitor {
+      position: absolute; 
+      top: 26%;
+      left: 75%; 
+      width: 180px ;
+    }
+    #monitorTitulo {
+      position: absolute;
+      top: 55%;
+      left: 75%; 
+      width: 180px;
+      text-align: center;
+      font-size: 25px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;      
+    }
+
+    #monitorDescricao {
+      position: absolute;
+      top: 60%;
+      left: 72%;
+      width: 250px;
+      text-align: center;
+      font-size: 15px;
+      margin-top: 10px;
+      font-family: 'Ubuntu', sans-serif;      
+    }
+
+  
   .exit {
     display: inline-flex;
   	align-items: center;

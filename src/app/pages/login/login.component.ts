@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { GlobalConstant } from 'src/app/model/globalConstants';
 import { Usuario } from 'src/app/model/usuario';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -11,7 +12,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  usuario = new Usuario();
+  usuario = new Usuario()
   mensagem = "";
   
 
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
     this.LoginService.loginUserFromRemote(this.usuario).subscribe(
       data => {
         console.log("Resposta recebida")
+        GlobalConstant.usuarioLogado = data.id;
         this.router.navigate(['/menu'])
       },
       error => {

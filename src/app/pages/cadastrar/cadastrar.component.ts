@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Form } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { CadastroService } from 'src/app/services/cadastro.service';
@@ -13,6 +14,7 @@ export class CadastrarComponent implements OnInit {
   usuario = new Usuario();
   mensagemSucesso = "";
   mensagemErro: any ;
+  
 
 
   constructor(
@@ -23,18 +25,17 @@ export class CadastrarComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  cadastrar() {
-    
-    //this.CadastroService.cadastro(this.usuario).then((data) => {
-    //  console.log(data);
-    //});
-
+  cadastrar(f:any) {
+        
     this.CadastroService.RegisterUserFromRemote(this.usuario).subscribe(
       data => {
 
-        console.log("Resposta recebida")
-        this.mensagemSucesso = "Cadastro realizado com sucesso"
-        this.mensagemErro = ""
+        console.log("Resposta recebida");
+        this.mensagemSucesso = "Cadastro realizado. Por favor, faça login.";
+        this.mensagemErro = "";
+                
+        //reset formulário
+        //f.resetForm();
 
       },
       error => {

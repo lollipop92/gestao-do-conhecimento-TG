@@ -10,15 +10,9 @@ import { UserConfigService } from 'src/app/services/user-config.service';
 })
 export class UserConfigComponent implements OnInit {
   
-  usuario: any = {  
-      nome : null, 
-     email : null, 
-     senha : null,
-     senhaConfirmar : null,
-     setor : null, 
-     cargo : null
-    }
-
+  usuario = new Usuario();
+  mensagemSucesso = "";
+  mensagemErro: any ;  
         
   constructor(
     private router: Router,
@@ -27,15 +21,31 @@ export class UserConfigComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    this.usuario = this.UserConfigService.getUser()
-  }
-
-  saveUser(){
-    
-  }
-  editUser(){
+    this.getUser();
     
   }
 
+  //Não tá funcionando
+  editarUsuario(){
+
+    this.UserConfigService.editUserFromRemote(this.usuario).subscribe(
+      data => {
+        this.usuario = data;
+      }
+    );
+
+  }
+
+  getUser(){    
+    
+    this.UserConfigService.getUserFromRemote(this.usuario).subscribe(
+      data => {
+        this.usuario = data;
+        
+      }
+
+    );
+  }
+
+ 
 }

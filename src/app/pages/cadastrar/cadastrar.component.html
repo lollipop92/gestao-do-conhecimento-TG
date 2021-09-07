@@ -1,6 +1,6 @@
 <section id="main_content">
     <h1>CADASTRO</h1>
-    <form class="content" #f="ngForm" (ngSubmit)="cadastrar()">
+    <form class="content" #f="ngForm" (ngSubmit)="cadastrar(f)">        
         <div class="form-group">
             <label id="labelNome" for="nome">NOME</label>     
             <input type="text" [(ngModel)]= "usuario.nome" required 
@@ -24,15 +24,12 @@
                 </div>
             </div>      
         </div >
-
         <div class="form-group">
             <label id="labelSenha" for="senha">SENHA</label>
-
             <input type="password" [(ngModel)]="usuario.senha" 
             required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             placeholder="Informe sua senha de acesso" 
             name="senha" id="senha" #senha="ngModel">
-
             <input type="password" [(ngModel)]="usuario.senhaConfirmar" 
             required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
             placeholder="Confirme sua senha de acesso" 
@@ -44,17 +41,13 @@
                 <div *ngIf="senha.errors.pattern" id="erroSenha2">
                 Deve conter número, letra maiúscula e minúscula e pelo menos 8 caracteres
                 </div>
-            </div>
-            
+            </div>            
             <div *ngIf="senha.valid && senha.touched && !senhaConfirmar.valid && senhaConfirmar.touched" id="erroSenha">
-                Confirmar senha é obrigatório
-                
-            </div>
-             
+                Confirmar senha é obrigatório                
+            </div>             
             <div *ngIf="senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)" id="erroSenha">      
                  As senhas devem ser idênticas 
-            </div>
-                            
+            </div>                            
         </div>
 
         <div class="form-group">
@@ -75,15 +68,15 @@
         <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
             Cargo é obrigatório
         </div> 
-        <div>
-            <p id="sucesso">{{mensagemSucesso}}</p>
-            
-        </div> 
         <button class="start" type="submit" [disabled]="!f.valid || senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)"> START </button>                
     </form>
-    <p id="erro">{{mensagemErro.message}}</p>
+    <div *ngIf="f.valid">
+        <small id="sucesso">{{mensagemSucesso}}</small>
+        <small id="erro">{{mensagemErro.message}}</small>      
+    </div> 
     <button class="exit" type="button" routerLink="/login">SAIR</button>
 </section>
+
 
 
 
