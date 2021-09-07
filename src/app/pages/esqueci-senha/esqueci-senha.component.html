@@ -1,10 +1,18 @@
 <section id="main_content">
     <h1>RECUPERAR SENHA</h1>
-    <div class="content">
-        <label id="labelEsqueciSenhaEmail" for="esqueciSenhaEmail">EMAIL</label>
-        <input type="email" name="esqueciSenhaEmail" id="esqueciSenhaEmail">
-        <button class="enviar" type="submit" (click)="esqueciSenha()">ENVIAR</button>                       
-    </div>
+    <p>Informe seu endereço de email cadastrado para receber as instruções de recuperação de senha.</p>
+    <form class="content" #f="ngForm" (ngSubmit)="esqueciSenha(f)">
+        <div class="form-group">
+            <label id="labelEmail" for="email">EMAIL</label>
+            <input type="email" [(ngModel)]= "usuario.email" autofocus required email
+            placeholder="Informe seu email coorporativo" 
+            name="email" id="email" #email="ngModel">
+            <div *ngIf="!email.valid && email.touched" id="erroEmail">
+                Email inválido
+            </div>    
+            <button class="enviar" type="submit" [disabled]="!f.valid">ENVIAR</button>
+        </div>
+    </form>        
     <button class="exit" type="button" routerLink="/login">SAIR</button>
 </section>
 

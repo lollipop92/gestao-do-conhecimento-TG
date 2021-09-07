@@ -1,25 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Usuario } from '../model/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CadastroService {
 
-  constructor(private http : HttpClient) {}
+  constructor(private _http : HttpClient) {}
 
-  cadastro(nome: string, email:string, password:string, setor:string, cargo:string ){
+  
+  /*public cadastro(usuario:Usuario){
        
-    let body = {
-      "nome": nome,
-      "email": email,
-      "senha": password,
-      "setor": setor,
-      "cargo": cargo
-    };
+    let body = usuario;
         
-    return this.http.post('http://localhost:8050/api/v1/usuario',body,{headers:{contentType:"application/json"}}).toPromise()
+    return this._http.post('http://localhost:8050/api/v1/registrar',body,{headers:{contentType:"application/json"}}).toPromise()
     
+  }*/
+
+  public RegisterUserFromRemote(usuario:Usuario):Observable<any>{
+
+    return this._http.post<any>('http://localhost:8050/api/v1/registrar',usuario)
+
   }
   
 }

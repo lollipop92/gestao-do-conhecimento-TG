@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -9,8 +11,9 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  email:string = "";
-  password:string = "";
+  usuario = new Usuario();
+  mensagem = "";
+  
 
   constructor(
     private router: Router,
@@ -21,10 +24,19 @@ export class LoginComponent implements OnInit {
   }
 
 
-  fazerLogin() {
-    this.LoginService.login(this.email, this.password).then((data) => {
-      console.log(data);
-    });
+  
+  fazerLogin(){
+    this.LoginService.loginUserFromRemote(this.usuario).subscribe(
+      data => {
+        console.log("Resposta recebida")
+        this.router.navigate(['/menu'])
+      },
+      error => {
+        console.log("Exceção aconteceu");
+        this.mensagem = "Email e senha inválidos. Favor verificar suas informações."
+
+      }
+    );
   }
 
 }

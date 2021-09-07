@@ -1,18 +1,20 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Usuario } from '../model/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http : HttpClient) {}
+  constructor(private _http : HttpClient) {}
 
-  login(email:string, password:string){
-    let body = {
-      "email":"pinafi@gmail.com",
-      "senha":"1992-12-17"      
-    };
-    return this.http.post('http://localhost:8050/api/v1/usuario',body,{headers:{contentType:"application/json"}}).toPromise()
+  public loginUserFromRemote(usuario:Usuario):Observable<any>{
+    
+    return this._http.post<any>('http://localhost:8050/api/v1/login',usuario)
+
   }
+  
+ 
 }

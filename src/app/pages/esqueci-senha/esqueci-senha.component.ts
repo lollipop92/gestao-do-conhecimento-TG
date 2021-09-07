@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsqueciSenhaComponent implements OnInit {
 
+  usuario: any = {  
+    esqueciSenhaEmail: null
+    }
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  esqueciSenha() {
-    
+  esqueciSenha(form:any) {
+    console.log(form);
   }
 
 }

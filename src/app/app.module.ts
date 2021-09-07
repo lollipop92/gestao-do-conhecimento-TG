@@ -10,6 +10,10 @@ import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.compo
 import { MenuComponent } from './pages/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { UserConfigComponent } from './pages/user-config/user-config.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,11 +21,14 @@ import { FormsModule } from '@angular/forms';
     LoginComponent,
     CadastrarComponent,
     EsqueciSenhaComponent,
-    MenuComponent
+    MenuComponent,
+    UserConfigComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     HttpClientModule,
     FormsModule
   ],

@@ -4,6 +4,7 @@ import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { UserConfigComponent } from './pages/user-config/user-config.component';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
@@ -11,7 +12,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'esqueciSenha', component: EsqueciSenhaComponent},
-  {path: 'menu', component:MenuComponent}
+  {path: 'menu', component:MenuComponent},
+  {path: 'userConfig' , component:UserConfigComponent}
+
 ];
 
 @NgModule({
