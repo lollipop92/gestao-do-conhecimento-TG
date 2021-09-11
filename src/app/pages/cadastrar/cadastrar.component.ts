@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GlobalConstant } from 'src/app/model/globalConstants';
 import { Usuario } from 'src/app/model/usuario';
 import { CadastroService } from 'src/app/services/cadastro.service';
 
@@ -14,6 +15,8 @@ export class CadastrarComponent implements OnInit {
   usuario = new Usuario();
   mensagemSucesso = "";
   mensagemErro: any ;
+  usuarioEmail : string = "";
+  mensagemErroDominio= "" ;
   
 
 
@@ -26,28 +29,39 @@ export class CadastrarComponent implements OnInit {
   }
   
   cadastrar(f:any) {
-        
-    this.CadastroService.RegisterUserFromRemote(this.usuario).subscribe(
-      data => {
-
-        console.log("Resposta recebida");
-        this.mensagemSucesso = "Cadastro realizado. Por favor, faça login.";
-        this.mensagemErro = "";
-                
-        //reset formulário
-        //f.resetForm();
-
-      },
-      error => {
-
-        console.log("Exceção aconteceu");
-        this.mensagemErro = error.error;
-        this.mensagemSucesso = ""
-      }
-    )
-
+    
+    if(this.verificarEmail()){
+      this.CadastroService.RegisterUserFromRemote(this.usuario).subscribe(
+        data => {
+  
+          console.log("Resposta recebida");
+          this.mensagemSucesso = "Cadastro realizado. Por favor, faça login.";
+          this.mensagemErro = "";
+          this.mensagemErroDominio = "";
+                  
+          //reset formulário
+          //f.resetForm();
+  
+        },
+        error => {
+  
+          console.log("Exceção aconteceu");
+          this.mensagemErro = error.error;
+          this.mensagemSucesso = ""
+          this.mensagemErroDominio = ""
+        }
+      )
+    } else
+    
+    this.mensagemErroDominio = "Dominio não autorizado! Favor utilizar "+GlobalConstant.dominio
+    this.mensagemSucesso = "" 
+    this.mensagemErro = "";   
+    
   }
 
+  verificarEmail(){
+     return this.usuario.email.includes(GlobalConstant.dominio);
+  }
 
 
 }

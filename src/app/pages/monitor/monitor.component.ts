@@ -9,6 +9,9 @@ export class MonitorComponent implements OnInit {
 
   constructor() { }
 
+  titulo = "Monitor";
+  icone = "../../../assets/imgs/monitor.JPG"
+
   ngOnInit(): void {
   }
 

@@ -143,14 +143,26 @@
   font-family: 'Material Icons';  
   font-size: 55px;
   position: absolute; 
-  right: 55px; 
-  top: 85px;
+  right: 55px;   
   color: #1b1744;
   background-color: transparent;
   backface-visibility: hidden;
   border: transparent;
   transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95)
+}
 
+#userConfig {
+  top: 12%;
+}
+
+#gestaoUsuarios {
+  bottom: 2%;
+  right: 2%;
+}
+
+#logs {
+  bottom: 2%;
+  right: 7%;
 }
 
 

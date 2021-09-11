@@ -7,7 +7,7 @@ import { Usuario } from '../model/usuario';
 @Injectable({
   providedIn: 'root'
 })
-export class UserConfigService {
+export class EditarUsuarioService {
 
   apiUrl = "http://localhost:8050/api/v1"
   httpOptions = {
@@ -20,15 +20,16 @@ export class UserConfigService {
 
   public getUserFromRemote(usuario: Usuario): Observable<any> {
 
-    return this._http.get<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado);
+    console.log(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id)
+    return this._http.get<any>(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id);
 
   }
 
 
   public editUserFromRemote(usuario: Usuario): Observable<any> {
 
-    console.log(usuario.nome)
-    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado, usuario);
+    
+    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id, usuario);
 
   }
 

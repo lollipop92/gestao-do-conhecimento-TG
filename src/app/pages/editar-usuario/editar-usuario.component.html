@@ -1,10 +1,12 @@
-<section id="main_content">
-    <h1>MEU USUÁRIO</h1>
+<app-fundo-tela-botoes></app-fundo-tela-botoes>
+<h1>{{titulo}}</h1>
+<img src="{{icone}}" alt="icone">
+<section id="main_content">    
     <form class="content" #f="ngForm" (ngSubmit)="editarUsuario()" disabled>        
         <div class="form-group">
             <label id="labelNome" for="nome">NOME</label>     
             <input type="text" [(ngModel)]= "usuario.nome" required 
-            placeholder="Informe seu nome" 
+            placeholder="Nome" 
             name="nome" id="nome" #nome="ngModel">        
             <div *ngIf="!nome.valid && nome.touched" id="erroNome">
                 Nome é obrigatório
@@ -13,7 +15,7 @@
         <div class="form-group">
             <label id="labelEmail" for="email">EMAIL</label>
             <input type="email" [(ngModel)]= "usuario.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            placeholder="Informe seu email coorporativo" readonly  
+            placeholder="Email coorporativo" readonly  
             name="email" id="email" #email="ngModel">
             <div *ngIf="email.errors && (!email.valid && email.touched)">
                 <div *ngIf="email.errors.required" id="erroEmail">
@@ -28,11 +30,11 @@
             <label id="labelSenha" for="senha">SENHA</label>
             <input type="password" [(ngModel)]="usuario.senha" 
             required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            placeholder="Informe sua senha de acesso" 
+            placeholder="Informe a senha de acesso" 
             name="senha" id="senha" #senha="ngModel">
             <input type="password" [(ngModel)]="usuario.senhaConfirmar" 
             required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            placeholder="Confirme sua senha de acesso" 
+            placeholder="Confirme senha de acesso" 
             name="senhaConfirmar" id="senhaConfirmar" #senhaConfirmar="ngModel">
             <div *ngIf="senha.errors && (!senha.valid && senha.touched)">
                 <div *ngIf="senha.errors.required" id="erroSenha">
@@ -52,7 +54,7 @@
         <div class="form-group">
             <label id="labelSetor" for="setor">SETOR</label>   
             <input type="text" [(ngModel)]="usuario.setor"  
-            required placeholder="Informe seu setor "
+            required placeholder="Informe o setor "
             name="setor" id="setor" #setor="ngModel">
             <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
                 Setor é obrigatório
@@ -61,7 +63,7 @@
         <div class="form-group">
             <label id = "labelCargo" for="cargo">CARGO</label>   
             <input type="text" [(ngModel)]="usuario.cargo" 
-            required placeholder="Informe seu cargo"
+            required placeholder="Informe o cargo"
             name="cargo" id="cargo" #cargo="ngModel">
             <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
                 Cargo é obrigatório
@@ -72,10 +74,10 @@
         <div *ngIf="f.valid">
             <small id="sucesso">{{mensagemSucesso}}</small>
             <small id="erro">{{mensagemError}}</small>
-        </div>
-    <button class="exit" type="button" routerLink="/login">SAIR</button>
-    <button class="menu" type="button" routerLink="/menu">MENU</button>
+        </div>    
+    <button class="voltar" type="button" routerLink="/gestao-usuarios">VOLTAR</button>
 </section>
+
 
 
 

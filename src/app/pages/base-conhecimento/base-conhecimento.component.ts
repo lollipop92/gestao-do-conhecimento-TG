@@ -9,6 +9,9 @@ export class BaseConhecimentoComponent implements OnInit {
 
   constructor() { }
 
+  titulo = "Base de Conhecimento";
+  icone = "../../../assets/imgs/baseConhecimento.JPG"
+
   ngOnInit(): void {
   }
 

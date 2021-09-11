@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FundoTelaBotoesComponent } from '../fundo-tela-botoes/fundo-tela-botoes.component';
 
 @Component({
   selector: 'app-aprendizagem',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AprendizagemComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
+
+  titulo = "Aprendizagem";
+  icone = "../../../assets/imgs/aprendizagem.JPG"
 
   ngOnInit(): void {
   }

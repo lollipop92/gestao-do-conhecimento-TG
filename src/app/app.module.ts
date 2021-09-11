@@ -16,6 +16,11 @@ import { AprendizagemComponent } from './pages/aprendizagem/aprendizagem.compone
 import { MonitorComponent } from './pages/monitor/monitor.component';
 import { LoginService } from './services/login.service';
 import { AuthGuard } from './guards/auth.guard';
+import { LogsComponent } from './pages/logs/logs.component';
+import { GestaoUsuariosComponent } from './pages/gestao-usuarios/gestao-usuarios.component';
+import { FundoTelaBotoesComponent } from './pages/fundo-tela-botoes/fundo-tela-botoes.component';
+import { BsModalRef, ModalModule } from 'ngx-bootstrap/modal';
+import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 
 
 
@@ -31,16 +36,21 @@ import { AuthGuard } from './guards/auth.guard';
     BaseConhecimentoComponent,
     AprendizagemComponent,
     MonitorComponent,
+    LogsComponent,
+    GestaoUsuariosComponent,
+    FundoTelaBotoesComponent,
+    EditarUsuarioComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ModalModule.forRoot(),
     HttpClientModule,
     FormsModule
   ],
-  providers: [LoginComponent, AuthGuard],
+  providers: [LoginComponent, AuthGuard,BsModalRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
