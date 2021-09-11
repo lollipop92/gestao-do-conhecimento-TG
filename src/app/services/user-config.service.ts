@@ -10,6 +10,7 @@ import { Usuario } from '../model/usuario';
 export class UserConfigService {
 
   apiUrl = "http://localhost:8050/api/v1"
+  endPoint = "/2?"
   httpOptions = {
     headers : new HttpHeaders({
       'Content-Type': 'application/json'
@@ -24,12 +25,16 @@ export class UserConfigService {
 
   }
 
-  //Não tá funcionando
-  public editUserFromRemote(usuario:Usuario):Observable<any>{
+  
+  public editUserFromRemote(usuario : Usuario):Observable<any>{
     
-    console.log(GlobalConstant.usuarioLogado)
-    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado + "?nome=" + usuario.nome, null);
-    
+    console.log(usuario.nome)
+    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado + "?" +
+    "nome=" + usuario.nome + "&" +
+    "email=" + usuario.email + "&" +
+    "senha=" + usuario.senha + "&" +
+    "setor=" + usuario.setor + "&" +
+    "cargo=" + usuario.cargo + "&" ,usuario);    
 
   }
 

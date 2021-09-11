@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { AprendizagemComponent } from './pages/aprendizagem/aprendizagem.component';
 import { BaseConhecimentoComponent } from './pages/base-conhecimento/base-conhecimento.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
@@ -15,11 +16,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'esqueciSenha', component: EsqueciSenhaComponent},
-  {path: 'menu', component:MenuComponent},
-  {path: 'userConfig' , component:UserConfigComponent},
-  {path: 'baseConhecimento' , component:BaseConhecimentoComponent},
-  {path: 'aprendizagem' , component:AprendizagemComponent},
-  {path: 'monitor' , component:MonitorComponent}
+  {path: 'menu', component:MenuComponent, canActivate:[AuthGuard]},
+  {path: 'userConfig' , component:UserConfigComponent, canActivate:[AuthGuard]},
+  {path: 'base.conhecimento' , component:BaseConhecimentoComponent, canActivate:[AuthGuard]},
+  {path: 'aprendizagem' , component:AprendizagemComponent, canActivate:[AuthGuard]},
+  {path: 'monitor' , component:MonitorComponent, canActivate:[AuthGuard]}
 
 ];
 

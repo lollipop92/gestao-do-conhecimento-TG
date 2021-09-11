@@ -12,7 +12,7 @@ export class UserConfigComponent implements OnInit {
   
   usuario = new Usuario();
   mensagemSucesso = "";
-  mensagemErro: any ;  
+  mensagemError = "";     
         
   constructor(
     private router: Router,
@@ -24,13 +24,20 @@ export class UserConfigComponent implements OnInit {
     this.getUser();
     
   }
-
-  //Não tá funcionando
+  
   editarUsuario(){
 
     this.UserConfigService.editUserFromRemote(this.usuario).subscribe(
       data => {
-        this.usuario = data;
+        
+        console.log("Resposta recebida");
+        this.mensagemSucesso = "Usuário atualizado com sucesso";
+      },
+
+      error => {
+        
+        console.log("Exceção aconteceu");
+        this.mensagemError = "Não foi possivél atualizar o usuário."
       }
     );
 

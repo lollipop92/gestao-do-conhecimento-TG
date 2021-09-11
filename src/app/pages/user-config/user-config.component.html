@@ -1,6 +1,6 @@
 <section id="main_content">
     <h1>MEU USUÁRIO</h1>
-    <form class="content" #f="ngForm" (ngSubmit)="editarUsuario()">        
+    <form class="content" #f="ngForm" (ngSubmit)="editarUsuario()" disabled>        
         <div class="form-group">
             <label id="labelNome" for="nome">NOME</label>     
             <input type="text" [(ngModel)]= "usuario.nome" required 
@@ -49,32 +49,30 @@
                  As senhas devem ser idênticas 
             </div>                            
         </div>
-
         <div class="form-group">
             <label id="labelSetor" for="setor">SETOR</label>   
             <input type="text" [(ngModel)]="usuario.setor"  
             required placeholder="Informe seu setor "
             name="setor" id="setor" #setor="ngModel">
-        </div>
-        <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
-            Setor é obrigatório
-        </div>
+            <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
+                Setor é obrigatório
+            </div>
+        </div>        
         <div class="form-group">
             <label id = "labelCargo" for="cargo">CARGO</label>   
             <input type="text" [(ngModel)]="usuario.cargo" 
             required placeholder="Informe seu cargo"
             name="cargo" id="cargo" #cargo="ngModel">
-        </div> 
-        <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
-            Cargo é obrigatório
-        </div> 
-        <button class="start" type="submit" [disabled]="!f.valid || senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)"> SALVAR </button>                
+            <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
+                Cargo é obrigatório
+            </div>
+        </div>          
+        <button class="start" type="submit" [disabled]="!f.valid || (senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value))"> SALVAR </button>                
     </form>
-    <div *ngIf="f.valid">
-        <small id="sucesso">{{mensagemSucesso}}</small>
-        <!--<small id="erro">{{mensagemErro.message}}</small>-->      
-    </div> 
-    <!--<button class="edit" type="button" (click)="editUser()" >EDITAR</button>-->
+        <div *ngIf="f.valid">
+            <small id="sucesso">{{mensagemSucesso}}</small>
+            <small id="erro">{{mensagemError}}</small>
+        </div>
     <button class="exit" type="button" routerLink="/login">SAIR</button>
     <button class="menu" type="button" routerLink="/menu">MENU</button>
 </section>

@@ -14,6 +14,8 @@ import { UserConfigComponent } from './pages/user-config/user-config.component';
 import { BaseConhecimentoComponent } from './pages/base-conhecimento/base-conhecimento.component';
 import { AprendizagemComponent } from './pages/aprendizagem/aprendizagem.component';
 import { MonitorComponent } from './pages/monitor/monitor.component';
+import { LoginService } from './services/login.service';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -38,7 +40,7 @@ import { MonitorComponent } from './pages/monitor/monitor.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LoginComponent, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,6 +7,17 @@
 	  background-repeat: no-repeat;	
 	  background-size: cover;
   }
+
+  h1 {
+    font-family: 'Spartan', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    color:#9ecfc9;
+    position: relative; 
+    top: 10%;
+    left: 30%;
+    width: max-content;
+  }
   
   button:hover{
     transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
