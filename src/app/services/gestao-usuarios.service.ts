@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Config } from '../model/config';
 import { GlobalConstant } from '../model/globalConstants';
 import { Usuario } from '../model/usuario';
 
@@ -14,6 +15,10 @@ export class GestaoUsuariosService {
 
   listarUsuarios() {
     return this._http.get<Usuario[]>(this.apiUrl + '/usuarios');
+  }
+
+  listarConfigs() {
+    return this._http.get<Config[]>(this.apiUrl + '/Config');
   }
 
   remover() {

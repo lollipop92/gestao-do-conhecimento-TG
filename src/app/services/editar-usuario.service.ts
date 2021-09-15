@@ -20,15 +20,14 @@ export class EditarUsuarioService {
 
   public getUserFromRemote(usuario: Usuario): Observable<any> {
 
-    console.log(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id)
-    return this._http.get<any>(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id);
+      return this._http.get<any>(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id);
 
   }
 
 
   public editUserFromRemote(usuario: Usuario): Observable<any> {
 
-    
+    console.log(usuario)
     return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioSelecionado.id, usuario);
 
   }

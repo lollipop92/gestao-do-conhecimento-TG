@@ -21,6 +21,7 @@ import { GestaoUsuariosComponent } from './pages/gestao-usuarios/gestao-usuarios
 import { FundoTelaBotoesComponent } from './pages/fundo-tela-botoes/fundo-tela-botoes.component';
 import { BsModalRef, ModalModule } from 'ngx-bootstrap/modal';
 import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
+import { EditarConfigComponent } from './pages/editar-config/editar-config.component';
 
 
 
@@ -40,6 +41,7 @@ import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.co
     GestaoUsuariosComponent,
     FundoTelaBotoesComponent,
     EditarUsuarioComponent,
+    EditarConfigComponent,
   
   ],
   imports: [

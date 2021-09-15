@@ -27,7 +27,6 @@ export class UserConfigService {
 
   public editUserFromRemote(usuario: Usuario): Observable<any> {
 
-    console.log(usuario.nome)
     return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado, usuario);
 
   }

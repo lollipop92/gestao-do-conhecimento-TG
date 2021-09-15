@@ -4,6 +4,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AprendizagemComponent } from './pages/aprendizagem/aprendizagem.component';
 import { BaseConhecimentoComponent } from './pages/base-conhecimento/base-conhecimento.component';
 import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
+import { EditarConfigComponent } from './pages/editar-config/editar-config.component';
 import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { FundoTelaBotoesComponent } from './pages/fundo-tela-botoes/fundo-tela-botoes.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
   {path: 'logs', component:LogsComponent},
   {path: 'gestao-usuarios', component:GestaoUsuariosComponent},
   {path: 'fundo-tela-botoes', component:FundoTelaBotoesComponent},
-  {path: 'editar-usuario', component:EditarUsuarioComponent}
+  {path: 'editar-usuario', component:EditarUsuarioComponent},
+  {path: 'editar-configuracoes', component:EditarConfigComponent}
 
 ];
 

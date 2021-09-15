@@ -2,7 +2,7 @@
 <h1>{{titulo}}</h1>
 <img src="{{icone}}" alt="icone">
 <section id="main_content">    
-    <form class="content" #f="ngForm" (ngSubmit)="editarUsuario()" disabled>        
+    <form class="content" #f="ngForm" (ngSubmit)="editarUsuario()" >        
         <div class="form-group">
             <label id="labelNome" for="nome">NOME</label>     
             <input type="text" [(ngModel)]= "usuario.nome" required 
@@ -74,9 +74,9 @@
         <div *ngIf="f.valid">
             <small id="sucesso">{{mensagemSucesso}}</small>
             <small id="erro">{{mensagemError}}</small>
-        </div>    
-    <button class="voltar" type="button" routerLink="/gestao-usuarios">VOLTAR</button>
+        </div>        
 </section>
+<button class="voltar" type="button" routerLink="/gestao-usuarios">VOLTAR</button>
 
 
 

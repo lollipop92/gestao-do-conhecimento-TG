@@ -29,7 +29,7 @@ export class EditarUsuarioComponent implements OnInit {
 
   editarUsuario(){
 
-    this.editarUsuarioService.editUserFromRemote(GlobalConstant.usuarioSelecionado).subscribe(
+    this.editarUsuarioService.editUserFromRemote(this.usuario).subscribe(
       data => {
         
         console.log("Resposta recebida");

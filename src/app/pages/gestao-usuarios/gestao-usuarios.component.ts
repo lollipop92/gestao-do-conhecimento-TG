@@ -4,6 +4,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { GestaoUsuariosService } from 'src/app/services/gestao-usuarios.service';
 import { GlobalConstant } from 'src/app/model/globalConstants';
 import { Router } from '@angular/router';
+import { Config } from 'src/app/model/config';
 
 @Component({
   selector: 'app-gestao-usuarios',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 export class GestaoUsuariosComponent implements OnInit {
 
   usuarios: Usuario[] = [];
+  configs: Config[] = []
   titulo = "Gestão de Usuários";
   icone = "../../../assets/imgs/gestao-usuarios.JPG";
   deleteModalRef?: BsModalRef;
@@ -31,6 +33,11 @@ export class GestaoUsuariosComponent implements OnInit {
     this.gestaoUsuariosService.listarUsuarios().subscribe(
       dados => this.usuarios = dados
     );
+
+     this.gestaoUsuariosService.listarConfigs().subscribe(
+      dados => this.configs = dados      
+     ); 
+
   }
 
   onDelete(usuario: Usuario) {
@@ -60,8 +67,12 @@ export class GestaoUsuariosComponent implements OnInit {
 
   onEdit(usuario: Usuario) {
     GlobalConstant.usuarioSelecionado = usuario;
-    console.log(GlobalConstant.usuarioSelecionado);
     this.router.navigate(['/editar-usuario'])
+  }
+
+  OnEditConfig(config : Config){
+    GlobalConstant.configSelecionada = config;
+    this.router.navigate(['/editar-configuracoes'])
   }
 
 }

@@ -1,0 +1,183 @@
+section {
+    display: block;    
+    height: 65vh;
+
+  }
+  h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color:#1b1744;
+    position: absolute; 
+    top: 12%;
+    left: 46%;
+    width: max-content;
+  }
+  
+img {
+    background-color: #1b1744;
+    position: absolute;
+    top: 4%;
+    left: 35%;
+    width: 10%;
+    
+}
+
+#atencao{
+    font-family: 'Ubuntu', sans-serif;
+    
+    font-size: 20px;
+    color:#1b1744;
+    position: absolute; 
+    top: 25%;
+    left: 26%;
+    width: max-content;
+}
+
+label {
+    position: absolute;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #9ecfc9;
+  }
+  
+  input {
+    border:2px #fed151 solid;
+    background: transparent;
+    color: #1b1744;
+    position: absolute;
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    height: 40px;
+    width: 300px;
+    padding-left: 10px;
+    outline: none;
+    
+  }
+  
+  #config {
+    top: 250px;
+    left:530px;
+  }
+  
+  #labelConfig {
+    top: 250px;
+    left: 380px;
+  }
+  
+  #erroConfig {
+    position: absolute;
+    top: 287px;
+    left:530px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    color: red;
+  }
+  
+  #valueConfig {
+    top: 315px;
+    left:530px;
+  }
+  
+  #labelValueConfig {
+    top: 315px;
+    left: 460px;
+  }
+  
+  #erroValueConfig {
+    position: absolute;
+    top: 353px;
+    left:530px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    color: red;
+  }
+  
+  #erro {
+    position: absolute;
+    top: 400px;
+    left:425px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    color: red;
+  }
+  
+  #sucesso {
+    position: absolute;
+    top: 400px;
+    left:495px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    color: #1b1744;
+  }
+  
+  .start {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 55px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    text-align: center;
+    text-decoration: none;
+    color: #1b1744;
+    background-color: #fdd24f;
+    backface-visibility: hidden;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    box-shadow: 6px 6px 0px 1px rgba(253, 210, 79, 1); 
+    border-color: #1b1744;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);    
+    position: absolute; 
+    left: 520px; 
+    top: 440px; 
+  }
+  
+  button:hover{
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+  
+    .ng-invalid.ng-touched:not(form) {
+      border: 3px solid red  
+    }
+  
+    button:disabled,
+    button[disabled]{
+      color: #1b1744;
+      background-color: #cccccc;
+      backface-visibility: hidden;
+      border: 3px solid transparent;
+      border-radius: 40px;
+      box-shadow: 6px 6px 0px 1px #999999;    
+      border-color: #1b1744;
+      transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+      cursor: not-allowed;
+  }
+  
+  .voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    color: #1b1744;
+    background-color: #fdd24f;
+    backface-visibility: hidden;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    box-shadow: 6px 6px 0px 1px #1b1744;  
+    border-color: #1b1744;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);    
+    position: absolute; 
+    right: 25px; 
+    top: 80px }
+  
+  
+  

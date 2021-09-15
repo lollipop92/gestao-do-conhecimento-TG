@@ -1,0 +1,32 @@
+<app-fundo-tela-botoes></app-fundo-tela-botoes>
+<h1>{{titulo}}</h1>
+<img src="{{icone}}" alt="icone">
+<section id="main_content">
+    <span id="atencao">ATENÇÃO! Alterações podem comprometer o funcionamento do sistema.</span>
+    <form class="content" #f="ngForm" (ngSubmit)="editarConfig()"> 
+        <div class="form-group">
+            <label id="labelConfig" for="config">Configuração</label> 
+            <input type="text" [(ngModel)]= "config.config" required readonly
+            placeholder="Configuração" 
+            name="config" id="config" #configu="ngModel"> 
+            <div *ngIf="!configu.valid && configu.touched" id="erroConfig">
+                Configuração é obrigatório
+            </div>            
+        </div> 
+        <div class="form-group">
+            <label id="labelValueConfig" for="valueConfig">Valor</label> 
+            <input type="text" [(ngModel)]= "config.valueConfig" required 
+            placeholder="Valor da configuração" 
+            name="valueConfig" id="valueConfig" #valueConfig="ngModel"> 
+            <div *ngIf="!valueConfig.valid && valueConfig.touched" id="erroValueConfig">
+                Valor é obrigatório
+            </div>            
+        </div> 
+        <button class="start" type="submit" [disabled]="!f.valid || (!(valueConfig.touched) && !(configu.touched)) "> SALVAR </button>
+    </form>
+    <div *ngIf="f.valid">
+        <small id="sucesso">{{mensagemSucesso}}</small>
+        <small id="erro">{{mensagemError}}</small>
+    </div> 
+</section>
+<button class="voltar" type="button" routerLink="/gestao-usuarios">VOLTAR</button>
