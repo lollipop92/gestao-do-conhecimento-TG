@@ -9,7 +9,7 @@ import { CadastrarComponent } from './pages/cadastrar/cadastrar.component';
 import { EsqueciSenhaComponent } from './pages/esqueci-senha/esqueci-senha.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserConfigComponent } from './pages/user-config/user-config.component';
 import { BaseConhecimentoComponent } from './pages/base-conhecimento/base-conhecimento.component';
 import { AprendizagemComponent } from './pages/aprendizagem/aprendizagem.component';
@@ -22,6 +22,13 @@ import { FundoTelaBotoesComponent } from './pages/fundo-tela-botoes/fundo-tela-b
 import { BsModalRef, ModalModule } from 'ngx-bootstrap/modal';
 import { EditarUsuarioComponent } from './pages/editar-usuario/editar-usuario.component';
 import { EditarConfigComponent } from './pages/editar-config/editar-config.component';
+import { Etapa1Component } from './pages/etapa1/etapa1.component';
+import { Etapa2Component } from './pages/etapa2/etapa2.component';
+import { Etapa3Component } from './pages/etapa3/etapa3.component';
+import { Etapa4Component } from './pages/etapa4/etapa4.component';
+import { MenuAprendizagemComponent } from './pages/menu-aprendizagem/menu-aprendizagem.component';
+import { MenuBaseConhecimentoComponent } from './pages/menu-base-conhecimento/menu-base-conhecimento.component';
+import { BaseConhecimentoVisualizarComponent } from './pages/base-conhecimento-visualizar/base-conhecimento-visualizar.component';
 
 
 
@@ -42,6 +49,13 @@ import { EditarConfigComponent } from './pages/editar-config/editar-config.compo
     FundoTelaBotoesComponent,
     EditarUsuarioComponent,
     EditarConfigComponent,
+    Etapa1Component,
+    Etapa2Component,
+    Etapa3Component,
+    Etapa4Component,
+    MenuAprendizagemComponent,
+    MenuBaseConhecimentoComponent,
+    BaseConhecimentoVisualizarComponent,
   
   ],
   imports: [
@@ -50,7 +64,8 @@ import { EditarConfigComponent } from './pages/editar-config/editar-config.compo
     HttpClientModule,
     ModalModule.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [LoginComponent, AuthGuard,BsModalRef],
   bootstrap: [AppComponent]

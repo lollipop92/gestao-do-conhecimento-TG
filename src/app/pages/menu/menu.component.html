@@ -2,18 +2,18 @@
     <h1>Seja bem vindo {{nomeUsuario}} !</h1>
     <div class="content">
         <div>
-            <img src="../../../assets/imgs/baseConhecimento.JPG" alt="baseConhecimento" id="baseConhecimento" routerLink="/base-conhecimento"> 
+            <img src="../../../assets/imgs/baseConhecimento.JPG" alt="baseConhecimento" id="baseConhecimento" routerLink="/menu_base-conhecimento"> 
             <label for="baseConhecimento" >
-                <span id="baseConhecimentoTitulo">Base Conhecimento</span><br>
+                <span id="baseConhecimentoTitulo" routerLink="/menu_base-conhecimento">Base Conhecimento</span><br>
                 <span id="baseConhecimentoDescricao">Criar, editar e visualizar a base de
                     conhecimento</span>
             </label>
         </div>
 
         <div>
-            <img src="../../../assets/imgs/aprendizagem.JPG" alt="aprendizagem" id="aprendizagem" routerLink="/aprendizagem">
+            <img src="../../../assets/imgs/aprendizagem.JPG" alt="aprendizagem" id="aprendizagem" routerLink="/menu_aprendizagem">
             <label for="aprendizagem">
-                <span id="aprendizagemTitulo">Aprendizagem</span><br>
+                <span id="aprendizagemTitulo" routerLink="/menu_aprendizagem">Aprendizagem</span><br>
                 <span id="aprendizagemDescricao">Criar, editar e visualizar processos de conhecimento</span>
             </label>
         </div>
@@ -21,14 +21,14 @@
         <div>
             <img src="../../../assets/imgs/monitor.JPG" alt="monitor" id="monitor" routerLink="/monitor">
             <label for="monitor">
-                <span id="monitorTitulo">Monitor</span><br>
+                <span id="monitorTitulo" routerLink="/monitor">Monitor</span><br>
                 <span id="monitorDescricao">Acompanhe as atividades</span>
             </label>
         </div>                    
     </div>
     <button class="exit" type="button" routerLink="/login">SAIR</button>
-    <button id="userConfig" class="material-icons" type="button" routerLink="/user-config">manage_accounts</button>
-    <button id="gestaoUsuarios" class="material-icons" type="button" routerLink="/gestao-usuarios">groups</button>
-    <button id="logs" class="material-icons" type="button" routerLink="/logs">folder_open</button>
+    <button id="userConfig" class="material-icons" title="Configurações do usuário" type="button" routerLink="/user-config">manage_accounts</button>
+    <button id="gestaoUsuarios" class="material-icons" title="Gestão de usuários e configurações" type="button" routerLink="/gestao-usuarios">groups</button>
+    <button id="logs" class="material-icons" title="Visualizar Logs" type="button" routerLink="/logs">folder_open</button>
 </section>
 

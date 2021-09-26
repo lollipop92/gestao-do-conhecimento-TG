@@ -1,0 +1,82 @@
+<app-fundo-tela-botoes>   
+</app-fundo-tela-botoes>
+<h1>{{titulo}}</h1>
+<img src="{{icone}}" alt="icone">
+
+<section id="errosCabecalho">
+  <div class="erro" *ngIf="!processo.valid && processo.touched">
+      Processo é obrigatório
+    </div>
+    <div  class="erro" *ngIf="!etapa.valid && etapa.touched">
+      Processo é obrigatório
+    </div>
+    <div class="erro" *ngIf="!vigencia.valid && vigencia.touched">
+        Data de vigência é obrigatório
+    </div>
+  </section>
+
+<form class="content" #f="ngForm" (ngSubmit)="criar(f)">
+
+  <div class="form-group">
+        <label id="labelProcesso" for="processo">Processo</label>
+
+        <input type="text" [(ngModel)]="baseConhecimento.processo" required
+        placeholder="Digite o nome do processo"
+        id="processo" #processo="ngModel" name="processo">
+          
+  
+          
+        <label for="etapa">Etapa</label>
+
+        <input type="text" [(ngModel)]="baseConhecimento.etapa" required
+        placeholder="Digite o nome da etapa"
+        id="etapa"  #etapa="ngModel" name="etapa">
+          
+  
+
+        <label for="vigencia">Vigência</label>
+
+        <input type="date" [(ngModel)]="baseConhecimento.vigencia" required        
+        id="vigencia"  #vigencia="ngModel" name="vigencia">    
+        
+        <button type="submit" class="btn btn-outline-dark" [disabled]="f.invalid" id="novo" title="Criar"> 
+          <span id="icone" class="material-icons" >add</span>Criar
+        </button> 
+
+  </div> 
+
+  
+
+</form>
+
+<div class="tabela" id="Usuario">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Processo</th>
+          <th scope="col">Etapa</th>
+          <th scope="col">Vigência</th>
+          <th scope="col">Autor</th>
+          <th scope="col"></th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let baseConhecimento of basesConhecimento">
+          <th scope="row">{{baseConhecimento.id }}</th>          
+          <td>{{ baseConhecimento.processo }}</td>
+          <td>{{ baseConhecimento.etapa }}</td>
+          <td>{{ baseConhecimento.vigencia }}</td>
+          <td>{{ baseConhecimento.autorNome }}</td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-outline-secondary mb-1 btn-sm exibir" (click)="visualizar(baseConhecimento)">Exibir</button>
+              <button class="btn btn-outline-warning mb-1 btn-sm" routerLink="/base-conhecimento">Editar</button>                     
+            </span>
+        </td>                    
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  

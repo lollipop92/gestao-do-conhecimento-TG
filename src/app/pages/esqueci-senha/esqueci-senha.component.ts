@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
+import { EsqueciSenhaService } from 'src/app/services/esqueci-senha.service';
 
 @Component({
   selector: 'app-esqueci-senha',
@@ -7,17 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsqueciSenhaComponent implements OnInit {
 
-  usuario: any = {  
-    esqueciSenhaEmail: null
-    }
+  usuario = new Usuario();
+  mensagemSucesso = "";
+  mensagemError = "";  
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private esqueciSenhaService : EsqueciSenhaService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  esqueciSenha(form:any) {
-    console.log(form);
+  esqueciSenha() {
+    console.log(this.usuario.email);
+    this.esqueciSenhaService.esqueciMinhaSenha(this.usuario.email).subscribe(
+      data => {
+        console.log("Email enviado");
+        this.mensagemSucesso ="Email enviado"
+      },      
+    )
   }
 
 }

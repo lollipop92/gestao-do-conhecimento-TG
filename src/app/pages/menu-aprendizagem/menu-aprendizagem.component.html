@@ -1,0 +1,54 @@
+<app-fundo-tela-botoes>   
+</app-fundo-tela-botoes>
+<h1>{{titulo}}</h1>
+<img src="{{icone}}" alt="icone">
+<form action="">
+    <div>
+        <label for="">Processo</label>
+        <select id="status" >
+          <option value="1"></option>                
+          <option value="2">Processo 1</option>
+          <option value="3">Processo 2</option>
+          <option value="4">Processo 3</option>
+      </select >     
+        <label for="">Treinador</label>
+        <input type="email"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$ "placeholder="treinador@example.com" name="emailTreinador" id="emailTreinador" >  
+        <label for="">Treinado</label>
+        <input type="email"  required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$ "placeholder="treinado@example.com" name="emailTreinado" id="emailTreinado" >  
+        <button type="submit" class="btn btn-outline-dark" id="novo" title="Criar"> 
+          <span id="icone" class="material-icons" >
+            add
+            </span>
+          Criar
+        </button>
+    </div>    
+</form>
+<div class="tabela" id="Usuario">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Processo</th>
+          <th scope="col">Treinador</th>
+          <th scope="col">Treinado</th>
+          <th scope="col">Passo</th>
+          <th scope="col">Status</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span class="float-right">
+            <button class="btn btn-outline-warning mb-1 btn-sm" routerLink="/aprendizagem">Editar</button>                     
+          </span></td>                    
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

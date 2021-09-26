@@ -1,0 +1,117 @@
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color:#1b1744;
+  position: absolute; 
+  top: 12%;
+  left: 46%;
+  width: max-content;
+}
+
+img {
+  background-color: #1b1744;
+  position: absolute;
+  top: 2%;
+  left: 35%;
+  width: 10%;
+  
+}
+
+form{
+margin-left: 120px;
+}
+
+label{
+margin-left: 20px;
+margin-right: 5px;  
+font-family: 'Ubuntu', sans-serif;
+font-weight: 700;
+font-size: 22px;
+color: #9ecfc9;
+}
+
+input, select {
+border:2px #fed151 solid;
+background: transparent;
+color: #1b1744;  
+border-radius: 10px;
+font-family: 'Ubuntu', sans-serif;
+font-size: 17px;
+outline: none;
+padding-left: 10px;  
+}
+
+#novo {
+margin-left: 20px;
+color: #1b1744;
+border-color: #1b1744;
+font-weight: bolder;
+border-radius: 50px; 
+font-size: 18px; 
+
+}
+
+#errosCabecalho
+{
+  margin-left: 140px;
+}
+
+#icone{  
+width: 20px;
+float: left;
+margin-right: 5px;
+margin-top: 1px;
+}
+
+#novo:hover {
+background-color: #1b1744;
+color: white;
+}
+
+.tabela{
+margin-top: 30px;
+padding: 0px 100px;
+
+}
+
+.float-right{
+float: right;
+}
+
+.btn {
+  margin-left: 10px;
+}
+
+.exibir:hover {
+  background-color: #9ecfc9
+}
+
+.exibir {
+  border: 1px solid #9ecfc9;
+  color: 9ecfc9;
+}
+
+.erro {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: red;
+}
+
+.ng-invalid.ng-touched:not(form) {
+  border: 3px solid red
+
+}
+
+button:disabled,
+    button[disabled]{
+      color: #1b1744;
+      background-color: #cccccc;
+      backface-visibility: hidden;
+      border: 3px solid transparent;
+      border-radius: 40px; 
+      border-color: #1b1744;
+      transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+      cursor: not-allowed;
+}
+

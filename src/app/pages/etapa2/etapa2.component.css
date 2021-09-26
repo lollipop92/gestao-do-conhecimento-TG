@@ -1,0 +1,41 @@
+section {
+    font-family: 'Montserrat', sans-serif;
+    
+}
+h1 {
+    font-weight: 900;
+    margin-top: 35px;
+    margin-left: 25px;
+    font-size: 25px;
+}
+
+div {
+
+    font-weight: 400;
+    margin: 30px;
+    font-size: 18px;
+    text-align: justify;
+}
+
+label {
+    margin-left: 10px;
+}
+
+button {    
+    padding: 3px 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color: #1b1744;
+    background-color: #9ecfc9;
+    backface-visibility: hidden;
+    border: 3px solid transparent;
+    border-radius: 40px;
+    box-shadow: 6px 6px 0px 1px #1b1744;  
+    border-color: #1b1744;
+    transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+
+button:hover{
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+    }

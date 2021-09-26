@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,14 @@ import { Injectable } from '@angular/core';
 })
 export class EsqueciSenhaService {
 
-  constructor() { }
+  apiUrl = "http://localhost:8050/resetPassword/"
+
+  constructor(private _http: HttpClient) { }
+
+  esqueciMinhaSenha(emailUsuario:any){
+    console.log(this.apiUrl + emailUsuario)
+    return this._http.get(this.apiUrl + emailUsuario)
+  }
+
+
 }

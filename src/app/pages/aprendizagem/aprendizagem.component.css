@@ -17,3 +17,83 @@ img {
     width: 10%;
     
 }
+
+#identificacao {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 22px;
+  color:#777b86;  
+  margin-bottom: 2%;
+  border-style: none;
+
+}
+
+label {
+  margin-left: 5%;
+  font-weight: bolder;
+}
+
+small{
+  font-weight: lighter;
+  color: #1b1744;
+  
+}
+
+#ProcessoSmall{
+  color:#fed151;
+  font-weight: bold;  
+}
+
+select {
+  margin-left: 5px;
+  font-weight: lighter;
+  font-size: 22px;
+  border:2px #fed151 solid;
+  background: transparent;
+  color: #1b1744;  
+  border-radius: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  outline: none;  
+}
+
+button{  
+  border-radius: 50%;
+  border-style: none;
+  font-size: 40px;  
+  padding: 0px 20px 0px 20px;
+  background-color: #9ecfc9;
+  color: #777b86;
+  
+}
+
+#btn{
+  background-color: #777b86;
+  padding: 32px 120px 20px 120px;
+  border-radius: 15px;
+  margin-left: 2%;
+  font-family: 'Leckerli One', cursive;  
+}
+
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 14px;
+  font-weight: 600;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  color: #1b1744;
+  background-color: #fdd24f;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px #1b1744;
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);  
+  position: absolute; 
+  right: 25px; 
+  top: 100px }
+
+  button:hover{
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+    }

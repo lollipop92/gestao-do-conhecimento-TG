@@ -3,7 +3,7 @@
 <h1>{{titulo}}</h1>
 <img src="{{icone}}" alt="icone">
 
-<form class="content" #f="ngForm" (ngSubmit)="criarBaseConhecimento()">
+<form class="content" #f="ngForm" >
 
     <div id="cabecalho" class="form-group">
 
@@ -213,8 +213,8 @@
         name="arquivoComplementar"
         ><br>
     </div><br>
-
-
+    
+    
     <button type="submit" class="salvar" [disabled]="f.invalid">SALVAR</button>
 </form>
 <button class="material-icons voltar" title="Voltar" type="button"

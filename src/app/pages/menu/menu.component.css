@@ -31,7 +31,8 @@
       position: absolute;
       top: 30%;
       left: 15%;
-      width: 180px;       
+      width: 180px;
+      cursor: pointer;       
     }
 
     #baseConhecimentoTitulo {
@@ -44,6 +45,7 @@
       font-family: 'Ubuntu', sans-serif;
       font-weight: bold;      
     }
+    
 
     #baseConhecimentoDescricao {
       position: absolute;
@@ -53,14 +55,16 @@
       text-align: center;
       font-size: 15px;
       margin-top: 10px;
-      font-family: 'Ubuntu', sans-serif;      
+      font-family: 'Ubuntu', sans-serif;
+            
     }
 
     #aprendizagem {
       position: absolute; 
       top: 28%;
       left: 45%;
-      width: 180px  
+      width: 180px;
+      cursor: pointer;  
     }
     #aprendizagemTitulo {
       position: absolute;
@@ -72,6 +76,8 @@
       font-family: 'Ubuntu', sans-serif;
       font-weight: bold;      
     }
+
+     
 
     #aprendizagemDescricao {
       position: absolute;
@@ -89,6 +95,7 @@
       top: 26%;
       left: 75%; 
       width: 180px ;
+      cursor: pointer;
     }
     #monitorTitulo {
       position: absolute;
@@ -99,6 +106,12 @@
       font-size: 25px;
       font-family: 'Ubuntu', sans-serif;
       font-weight: bold;      
+    }
+
+    #baseConhecimentoTitulo:hover, #aprendizagemTitulo:hover, #monitorTitulo:hover {
+      text-decoration: underline #9ecfc9;
+      cursor: pointer;
+      transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
     }
 
     #monitorDescricao {

@@ -32,7 +32,26 @@ section {
     transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
     position: absolute; 
     right: 25px; 
-    top: 20px; }
+    top: 40px; }
+
+    small {
+      position: absolute;
+      left: 89.5%;   
+      text-align: center;
+      font-size: 18px;
+      font-weight: bolder;
+      margin-top: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      color: #1b1744;
+    }
+
+    i {
+      width: 24px;
+      font-size: 26px;
+      float: left;
+      margin-right: 5px;
+      margin-top: 1px;
+    }
 
   .menu {
     display: inline-flex;

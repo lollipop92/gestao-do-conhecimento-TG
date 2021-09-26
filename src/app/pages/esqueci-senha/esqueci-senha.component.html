@@ -1,7 +1,7 @@
 <section id="main_content">
     <h1>RECUPERAR SENHA</h1>
     <p>Informe seu endereço de email cadastrado para receber as instruções de recuperação de senha.</p>
-    <form class="content" #f="ngForm" (ngSubmit)="esqueciSenha(f)">
+    <form class="content" #f="ngForm" (ngSubmit)="esqueciSenha()">
         <div class="form-group">
             <label id="labelEmail" for="email">EMAIL</label>
             <input type="email" [(ngModel)]= "usuario.email" autofocus required email

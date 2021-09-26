@@ -2,3 +2,36 @@
 </app-fundo-tela-botoes>
 <h1>{{titulo}}</h1>
 <img src="{{icone}}" alt="icone">
+<section id="identificacao">
+    
+            <label id="ProcessoLabel "for="ProcessoInput"> Processo: </label>
+            <small id="ProcessoSmall">  </small> 
+
+            <label id="MestreLabel" for="MestreInput"> Treinador: </label>
+            <small id="MestreSmall">  </small>  
+
+            <label id="AprendizLabel"for="AprendizInput"> Treinado: </label>
+            <small>  </small>  
+
+            <label id="statusLabel"for="status"> Status </label>
+            <select id="status">
+                <option value="1">Executando</option>                
+                <option value="2">Completo</option>
+                <option value="3">Parado</option>
+                <option value="4">Cancelado</option>
+            </select > 
+                
+</section>
+<section id="botoes">    
+    <small id="btn"><button (click)= etapa1()>1</button></small>
+    <small id="btn"><button (click)= etapa2()>2</button></small>
+    <small id="btn"><button (click)= etapa3()>3</button></small>
+    <small id="btn"><button (click)= etapa4()>4</button></small>
+</section>
+<section id="etapas">
+    <app-etapa1 *ngIf="etapa == 1" ></app-etapa1>
+    <app-etapa2 *ngIf="etapa == 2"></app-etapa2>
+    <app-etapa3 *ngIf="etapa == 3"></app-etapa3>
+    <app-etapa4 *ngIf="etapa == 4"></app-etapa4>
+</section>
+<button class="material-icons voltar" title="Voltar" type="button" routerLink="/menu_base-conhecimento">arrow_back</button>

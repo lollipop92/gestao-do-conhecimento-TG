@@ -17,3 +17,12 @@ img {
     width: 10%;
     
 }
+
+table {
+  width: 180px;
+}
+
+td, th {
+  border: 1pt solid black;
+  padding: 0.5rem;
+}

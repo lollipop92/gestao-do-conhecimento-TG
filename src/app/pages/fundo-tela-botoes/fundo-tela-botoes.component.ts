@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalConstant } from 'src/app/model/globalConstants';
 
 @Component({
   selector: 'app-fundo-tela-botoes',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class FundoTelaBotoesComponent implements OnInit {
 
   constructor() { }
+
+  nomeUsuario = GlobalConstant.usuarioNomeLogado;
+  
 
   ngOnInit(): void {
   }
