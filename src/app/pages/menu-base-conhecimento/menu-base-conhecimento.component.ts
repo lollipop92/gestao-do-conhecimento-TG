@@ -76,4 +76,10 @@ export class MenuBaseConhecimentoComponent implements OnInit {
     this.router.navigate(['/base-conhecimento-visualizar'])
   }
 
+  editar(baseConhecimento:BaseConhecimento){
+    GlobalConstant.baseConhecimentoSelecionada = baseConhecimento
+    GlobalConstant.baseConhecimentoEditar = true
+    this.router.navigate(['/base-conhecimento-visualizar'])
+  }
+
 }

@@ -84,7 +84,7 @@
         <select [(ngModel)]="baseConhecimento.treinamento" required id="treinamento" #treinamento="ngModel"
             name="treinamento">
             <option value="Sim">Sim</option>
-            <option value="Nao">Não</option>
+            <option value="Não">Não</option>
         </select>
     </div>
 
@@ -122,7 +122,7 @@
         name="orientacao"
         ></textarea>
     </div>
-
+<!--
     <div>
         <label for="fluxograma">Fluxograma</label>
         <i class="material-icons"
@@ -132,13 +132,13 @@
         <div class="erro" *ngIf="!fluxograma.valid && fluxograma.touched">
             É obrigatório anexar o fluxograma
         </div>
-
+        
         <input type="file" class="anexar" [(ngModel)]="baseConhecimento.fluxograma" required id="fluxograma" #fluxograma="ngModel"
         name="fluxograma"
         (change)="onChange($event)"
         >
     </div>
-
+-->
     <div><br>
         <label for="procedimentos">Procedimentos</label>
         <i class="material-icons"
@@ -213,8 +213,11 @@
         name="arquivoComplementar"
         ><br>
     </div><br>
-
-
+    
+    <div>
+        <small id="sucesso">{{mensagemSucesso}}</small>
+        <small id="erro">{{mensagemError}}</small>
+    </div>
     <button type="submit" class="salvar" [disabled]="f.invalid">SALVAR</button>
 </form>
 <button class="material-icons voltar" title="Voltar" type="button"

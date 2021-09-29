@@ -32,12 +32,14 @@ export class CadastrarComponent implements OnInit {
     
     if(this.verificarEmail()){
       this.CadastroService.RegisterUserFromRemote(this.usuario).subscribe(
-        data => {
+        async data => {
   
           console.log("Resposta recebida");
           this.mensagemSucesso = "Cadastro realizado. Por favor, faça login.";
           this.mensagemErro = "";
           this.mensagemErroDominio = "";
+          await this.sleep(2000);
+          this.router.navigate(['/login'])
                   
           //reset formulário
           //f.resetForm();
@@ -61,6 +63,10 @@ export class CadastrarComponent implements OnInit {
 
   verificarEmail(){
      return this.usuario.email.includes(GlobalConstant.dominio);
+  }
+
+  sleep(ms:any){
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 
 

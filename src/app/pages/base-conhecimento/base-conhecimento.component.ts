@@ -16,7 +16,7 @@ export class BaseConhecimentoComponent implements OnInit {
   // Variable to store shortLink from api response
   shortLink: string = "";
   loading: boolean = false; // Flag variable
-  file?: File; // Variable to store file
+  fluxograma?: File; // Variable to store file
 
   constructor(
     private router: Router,
@@ -26,6 +26,8 @@ export class BaseConhecimentoComponent implements OnInit {
   titulo = "Base de Conhecimento";
   icone = "../../../assets/imgs/baseConhecimento.JPG"
   baseConhecimento = new BaseConhecimento();
+  mensagemSucesso = "";
+  mensagemError = ""; 
 
     
 
@@ -33,31 +35,42 @@ export class BaseConhecimentoComponent implements OnInit {
     this.baseConhecimento.processo = GlobalConstant.processoBaseConhecimento 
     this.baseConhecimento.etapa = GlobalConstant.etapaBaseConhecimento
     this.baseConhecimento.vigencia = GlobalConstant.vigenciaBaseConhecimento
+
+    console.log(GlobalConstant.usuarioLogado)
     
   }
 
   onChange(event:any) { 
 
-      this.file = event.target.files[0]; 
+      this.baseConhecimento.fluxograma = event.target.files[0]; 
     
   }
 
-  criarBaseConhecimento(){ 
+  criarBaseConhecimento(){     
     
-    this.loading = !this.loading;
-        console.log(this.file);
-        this.BaseConhecimentoService.criarBaseConhecimento(this.file, this.baseConhecimento).subscribe(
-            (event: any) => {
-                if (typeof (event) === 'object') {
-  
-                    // Short link via api response
-                    this.shortLink = event.link;
-  
-                    this.loading = false; // Flag variable 
-                }
+        
+        this.baseConhecimento.autor = GlobalConstant.usuarioLogado;
+        this.BaseConhecimentoService.criarBaseConhecimento(this.baseConhecimento).subscribe(
+          async data => {
+              this.mensagemSucesso = "Base de conhecimento criada com sucesso! Você será direcionado para lista.";
+              this.mensagemError = "";
+              await this.sleep(2000);
+              this.router.navigate(['/menu_base-conhecimento'])
+
+            },
+            error => {
+              this.mensagemError = "Não foi possivél criar a Base de Conhecimento, por favor tente mais tarde."
+              this.mensagemSucesso = "";
             }
         );
     }
+
+    sleep(ms:any){
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
+  
        
 
 }

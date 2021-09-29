@@ -15,5 +15,6 @@ export class GlobalConstant {
     public static etapaBaseConhecimento: string
     public static vigenciaBaseConhecimento: string
     public static baseConhecimentoSelecionada: BaseConhecimento
+    public static baseConhecimentoEditar: boolean
 
 }

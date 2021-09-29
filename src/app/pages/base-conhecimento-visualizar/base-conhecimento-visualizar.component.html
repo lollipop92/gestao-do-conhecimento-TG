@@ -3,28 +3,27 @@
 <h1>{{titulo}}</h1>
 <img src="{{icone}}" alt="icone">
 
-<form class="content" #f="ngForm" >
+<form class="content" #f="ngForm" (ngSubmit)="editarBaseConhecimento()">
 
     <div id="cabecalho" class="form-group">
 
         <label id="labelProcesso" for="processo">Processo</label>
 
         <input type="text" [(ngModel)]="baseConhecimento.processo" required placeholder="Digite o nome do processo"
-            id="processo" #processo="ngModel" name="processo">
-
+            id="processo" #processo="ngModel" name="processo" [readonly]="isExibir">
 
 
         <label for="etapa">Etapa</label>
 
         <input type="text" [(ngModel)]="baseConhecimento.etapa" required placeholder="Digite o nome da etapa" id="etapa"
-            #etapa="ngModel" name="etapa">
+            #etapa="ngModel" name="etapa" [readonly]="isExibir">
 
 
 
         <label for="vigencia">Vigência</label>
 
-        <input type="date" [(ngModel)]="baseConhecimento.vigencia" required id="vigencia" #vigencia="ngModel"
-            name="vigencia">
+        <input type="date" (ngModelChange)= "baseConhecimento.vigencia = $event" [ngModel]="baseConhecimento.vigencia | date:'yyyy-MM-dd'" required id="vigencia"
+            #vigencia="ngModel" name="vigencia" [readonly]="isExibir">
 
     </div>
     <section id="errosCabecalho">
@@ -48,7 +47,7 @@
         </div>
 
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.objetivo" required id="objetivo" #objetivo="ngModel"
-            name="objetivo"></textarea>
+            name="objetivo" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -60,7 +59,7 @@
         </div>
 
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.campoAplicacao" required id="campoAplicacao"
-            #campoAplicacao="ngModel" name="campoAplicacao"></textarea>
+            #campoAplicacao="ngModel" name="campoAplicacao" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -73,7 +72,7 @@
         </div>
 
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.competencia" required id="competencia"
-            #competencia="ngModel" name="competencia"></textarea>
+            #competencia="ngModel" name="competencia" [readonly]="isExibir"></textarea>
 
     </div>
     <div>
@@ -82,10 +81,12 @@
             title="Informar se existe a necessidade de treinamento para exercer essa etapa">info</i><br>
 
         <select [(ngModel)]="baseConhecimento.treinamento" required id="treinamento" #treinamento="ngModel"
-            name="treinamento">
+            name="treinamento" *ngIf="isEdit">
             <option value="Sim">Sim</option>
-            <option value="Nao">Não</option>
+            <option value="Não">Não</option>
         </select>
+        <input type="text" [(ngModel)]="baseConhecimento.treinamento" required id="treinamento" #treinamento="ngModel"
+        name="treinamento" *ngIf="isExibir">
     </div>
 
     <div>
@@ -98,7 +99,7 @@
         </div>
 
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.perfil" required id="perfil" #perfil="ngModel"
-            name="perfil"></textarea>
+            name="perfil" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -107,7 +108,7 @@
             title="Listar os termos técnicos citados no documento e seus respectivos significados">info</i><br>
 
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.termosTecnicos" id="termosTecnicos"
-            #termosTecnicos="ngModel" name="termosTecnicos"></textarea>
+            #termosTecnicos="ngModel" name="termosTecnicos" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -118,9 +119,8 @@
             Orientações é de preenchimento obrigatório
         </div>
 
-        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.orientacao" required id="orientacao" #orientacao="ngModel"
-        name="orientacao"
-        ></textarea>
+        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.orientacao" required id="orientacao"
+            #orientacao="ngModel" name="orientacao" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -133,10 +133,8 @@
             É obrigatório anexar o fluxograma
         </div>
 
-        <input type="file" class="anexar" [(ngModel)]="baseConhecimento.fluxograma" required id="fluxograma" #fluxograma="ngModel"
-        name="fluxograma"
-        (change)="onChange($event)"
-        >
+        <input type="file" class="anexar" [(ngModel)]="baseConhecimento.fluxograma" required id="fluxograma"
+            #fluxograma="ngModel" name="fluxograma" [readonly]="isExibir" (change)="onChange($event)">
     </div>
 
     <div><br>
@@ -144,12 +142,12 @@
         <i class="material-icons"
             title="Descreva as atividades a serem executadas nesta etapa de acordo com o fluxograma">info</i><br>
 
-            <div class="erro" *ngIf="!procedimentos.valid && procedimentos.touched">
-                Procedimentos é de preenchimento obrigatório
-            </div>
+        <div class="erro" *ngIf="!procedimentos.valid && procedimentos.touched">
+            Procedimentos é de preenchimento obrigatório
+        </div>
 
-        <textarea cols="100" rows="2"[(ngModel)]="baseConhecimento.procedimentos" required id="procedimentos" #procedimentos="ngModel"
-        name="procedimentos"></textarea>
+        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.procedimentos" required id="procedimentos"
+            #procedimentos="ngModel" name="procedimentos" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -162,34 +160,34 @@
         </div>
 
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.tempo" required id="tempo" #tempo="ngModel"
-        name="tempo"></textarea>
+            name="tempo" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
         <label for="indicadores">Indicadores</label>
         <i class="material-icons"
             title="Informar os principais métodos de medir os resultados do processo;">info</i><br>
-                        
+
         <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.indicadores" id="indicadores" #indicadores="ngModel"
-        name="indicadores"></textarea>
+            name="indicadores" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
         <label for="relatorioGestao">Relatório de gestão</label>
         <i class="material-icons"
             title="Informar as metas estabelecidas para determinado período, as ações realizadas e os resultados alcançados, além de previsões e projeções para os próximos períodos;">info</i><br>
-       
-        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.relatorioGestao"  id="relatorioGestao" #relatorioGestao="ngModel"
-        name="relatorioGestao"></textarea>
+
+        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.relatorioGestao" id="relatorioGestao"
+            #relatorioGestao="ngModel" name="relatorioGestao" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
         <label for="normas">Normas</label>
         <i class="material-icons"
             title="Informar as leis, os princípios, as regras e as especificações técnicas que regem os procedimentos operacionais">info</i><br>
-          
-        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.normas" id="normas" #normas="ngModel"
-        name="normas"></textarea>
+
+        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.normas" id="normas" #normas="ngModel" name="normas"
+            [readonly]="isExibir"></textarea>
     </div>
 
     <div>
@@ -197,25 +195,27 @@
         <i class="material-icons"
             title="Informar o contato do funcionário ou especialista que realiza esta etapa">info</i><br>
 
-            <div class="erro" *ngIf="!recursoDuvida.valid && recursoDuvida.touched">
-                Recursos para dúvidas é de preenchimento obrigatório
-            </div>
+        <div class="erro" *ngIf="!recursoDuvida.valid && recursoDuvida.touched">
+            Recursos para dúvidas é de preenchimento obrigatório
+        </div>
 
-        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.recursoDuvida" required id="recursoDuvida" #recursoDuvida="ngModel"
-        name="recursoDuvida"></textarea>
+        <textarea cols="100" rows="2" [(ngModel)]="baseConhecimento.recursoDuvida" required id="recursoDuvida"
+            #recursoDuvida="ngModel" name="recursoDuvida" [readonly]="isExibir"></textarea>
     </div>
 
     <div>
         <label for="arquivoComplementar">Anexar arquivo complementar</label>
         <i class="material-icons" title="Anexar arquivo complementar a esta etapa">info</i><br>
 
-        <input type="file" class="anexar" [(ngModel)]="baseConhecimento.arquivoComplementar"  id="arquivoComplementar" #arquivoComplementar="ngModel"
-        name="arquivoComplementar"
-        ><br>
+        <input type="file" class="anexar" [(ngModel)]="baseConhecimento.arquivoComplementar" id="arquivoComplementar"
+            #arquivoComplementar="ngModel" name="arquivoComplementar" [readonly]="isExibir"><br>
     </div><br>
-    
-    
-    <button type="submit" class="salvar" [disabled]="f.invalid">SALVAR</button>
+
+    <div>
+        <small id="sucesso">{{mensagemSucesso}}</small>
+        <small id="erro">{{mensagemError}}</small>
+    </div>
+    <button *ngIf="isEdit" type="submit" class="salvar">SALVAR</button>
 </form>
 <button class="material-icons voltar" title="Voltar" type="button"
     routerLink="/menu_base-conhecimento">arrow_back</button>

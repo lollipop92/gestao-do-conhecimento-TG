@@ -26,8 +26,20 @@ export class BaseConhecimentoVisualizarComponent implements OnInit {
   titulo = "Base de Conhecimento";
   icone = "../../../assets/imgs/baseConhecimento.JPG"
   baseConhecimento = new BaseConhecimento();
+  mensagemSucesso = "";
+  mensagemError = ""; 
+  isEdit: boolean = false;
+  isExibir: boolean = true;
 
   ngOnInit(): void {
+    this.isEdit = false;
+    this.isExibir = true;
+
+    if (GlobalConstant.baseConhecimentoEditar) {
+      this.isEdit = true;
+      this.isExibir = false;
+      GlobalConstant.baseConhecimentoEditar = false;
+    }
     this.baseConhecimento = GlobalConstant.baseConhecimentoSelecionada
   }
 
@@ -35,6 +47,29 @@ export class BaseConhecimentoVisualizarComponent implements OnInit {
 
     this.file = event.target.files[0]; 
   
+}
+
+editarBaseConhecimento(){
+
+  this.BaseConhecimentoService.criarBaseConhecimento(this.baseConhecimento).subscribe(
+    async data => {
+        this.mensagemSucesso = "Base de conhecimento editada com sucesso! Você será direcionado para lista.";
+        this.mensagemError = "";
+        await this.sleep(2000);
+        this.router.navigate(['/menu_base-conhecimento'])
+
+      },
+      error => {
+        this.mensagemError = "Não foi possivél editar a Base de Conhecimento, por favor tente mais tarde."
+        this.mensagemSucesso = "";
+      }
+      
+  );
+
+}
+
+sleep(ms:any){
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 }
