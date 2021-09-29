@@ -38,4 +38,9 @@ export class BaseConhecimentoService {
 
   } 
 
+  public remover(): Observable<any> {
+    return this._http.delete(this.apiUrl + "/" +  GlobalConstant.baseConhecimentoSelecionada.id)
+
+  }
+
 }

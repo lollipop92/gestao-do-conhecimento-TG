@@ -19,11 +19,10 @@ img {
 }
 
 form{
-  margin-left: 120px;
+  margin-left: 100px;
 }
 
 label{
-  margin-left: 20px;
   margin-right: 5px;  
   font-family: 'Ubuntu', sans-serif;
   font-weight: 700;
@@ -43,7 +42,7 @@ input, select {
 }
 
 #novo {
-  margin-left: 20px;
+  margin-left: 10px;
   color: #1b1744;
   border-color: #1b1744;
   font-weight: bolder;

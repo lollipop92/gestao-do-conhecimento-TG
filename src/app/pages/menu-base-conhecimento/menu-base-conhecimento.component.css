@@ -75,6 +75,10 @@ padding: 0px 100px;
 
 }
 
+.coluna {
+  width: 230px;
+}
+
 .float-right{
 float: right;
 }

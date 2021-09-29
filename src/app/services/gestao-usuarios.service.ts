@@ -22,7 +22,7 @@ export class GestaoUsuariosService {
   }
 
   remover() {
-    console.log(GlobalConstant.usuarioSelecionado)
+    
     return this._http.delete(this.apiUrl + "/" +  GlobalConstant.usuarioSelecionado.id)
   }
 

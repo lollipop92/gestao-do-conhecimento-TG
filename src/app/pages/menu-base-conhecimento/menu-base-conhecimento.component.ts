@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Form } from '@angular/forms';
 import { Router } from '@angular/router';
+import { BsModalService,BsModalRef } from 'ngx-bootstrap/modal';
 import { BaseConhecimento } from 'src/app/model/base-conhecimento';
 import { GlobalConstant } from 'src/app/model/globalConstants';
 import { Usuario } from 'src/app/model/usuario';
@@ -20,6 +21,7 @@ export class MenuBaseConhecimentoComponent implements OnInit {
     private router: Router, 
     private BaseConhecimentoService:BaseConhecimentoService,
     private UserConfigService:UserConfigService,
+    private modalService: BsModalService
     
   ) { }
 
@@ -28,6 +30,10 @@ export class MenuBaseConhecimentoComponent implements OnInit {
   baseConhecimento = new BaseConhecimento();
   basesConhecimento : BaseConhecimento[] = [];
   usuariosAutor : Usuario[] = []
+  deleteModalRef?: BsModalRef;
+  @ViewChild('deleteModal', { static: true }) deleteModal: any;
+
+
 
   ngOnInit(): void {
     this.getBasesConhecimento();
@@ -80,6 +86,25 @@ export class MenuBaseConhecimentoComponent implements OnInit {
     GlobalConstant.baseConhecimentoSelecionada = baseConhecimento
     GlobalConstant.baseConhecimentoEditar = true
     this.router.navigate(['/base-conhecimento-visualizar'])
+  }
+
+  deletar(baseConhecimento:BaseConhecimento){
+    GlobalConstant.baseConhecimentoSelecionada = baseConhecimento
+    this.deleteModalRef = this.modalService.show(this.deleteModal, { class: 'modal-sm' });
+  }
+
+  onConfirmDelete() {
+    this.BaseConhecimentoService.remover().subscribe(
+      data => {
+        console.log(data);
+        this.getBasesConhecimento();
+        this.deleteModalRef?.hide();
+
+      });
+  }
+
+  onDeclineDelete() {
+    this.deleteModalRef?.hide();
   }
 
 }
