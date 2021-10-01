@@ -14,6 +14,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { LogsComponent } from './pages/logs/logs.component';
 import { MenuAprendizagemComponent } from './pages/menu-aprendizagem/menu-aprendizagem.component';
 import { MenuBaseConhecimentoComponent } from './pages/menu-base-conhecimento/menu-base-conhecimento.component';
+import { MenuConfigComponent } from './pages/menu-config/menu-config.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MonitorComponent } from './pages/monitor/monitor.component';
 import { UserConfigComponent } from './pages/user-config/user-config.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'esqueci-senha', component: EsqueciSenhaComponent},
-  {path: 'menu', component:MenuComponent,canActivate:[AuthGuard] },
+  {path: 'menu', component:MenuComponent },
   {path: 'user-config' , component:UserConfigComponent, canActivate:[AuthGuard]},
   {path: 'base-conhecimento' , component:BaseConhecimentoComponent},
   {path: 'base-conhecimento-visualizar' , component:BaseConhecimentoVisualizarComponent},
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'gestao-usuarios', component:GestaoUsuariosComponent},
   {path: 'fundo-tela-botoes', component:FundoTelaBotoesComponent},
   {path: 'editar-usuario', component:EditarUsuarioComponent},
-  {path: 'editar-configuracoes', component:EditarConfigComponent}
+  {path: 'editar-configuracoes', component:EditarConfigComponent},
+  {path: 'menu-configuracoes', component:MenuConfigComponent}
 
 ];
 

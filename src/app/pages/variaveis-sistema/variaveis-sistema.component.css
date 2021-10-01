@@ -1,0 +1,30 @@
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color:#1b1744;
+  position: absolute; 
+  top: 12%;
+  left: 46%;
+  width: max-content;
+}
+
+img {
+  background-color: #1b1744;
+  position: absolute;
+  top: 4%;
+  left: 35%;
+  width: 10%;
+  
+}
+
+.tabela{
+padding: 0px 100px;
+
+}
+
+.float-right{
+float: right;
+}
+
+

@@ -1,0 +1,27 @@
+
+<div class="tabela" id="Configuração">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Configuração</th>
+          <th scope="col">Valor</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let config of configs">
+          <th scope="row">{{ config.id }}</th>
+          <td>{{ config.config }}</td>
+          <td>{{ config.valueConfig }}</td>
+          <td>
+            <span class="float-right">
+              <button class="btn btn-outline-warning mb-1 btn-sm" (click)="OnEditConfig(config)">Editar</button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+

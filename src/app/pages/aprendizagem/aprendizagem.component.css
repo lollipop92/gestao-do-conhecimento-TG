@@ -28,14 +28,21 @@ img {
 }
 
 label {
-  margin-left: 5%;
+  margin-left: 15px;
   font-weight: bolder;
 }
 
 small{
   font-weight: lighter;
-  color: #1b1744;
-  
+  color: #1b1744;  
+}
+
+input {
+  font-weight: lighter;
+  color: #1b1744; 
+  font-size: 22px;
+  width: 160px;
+  border: none;
 }
 
 #ProcessoSmall{
@@ -71,6 +78,10 @@ button{
   border-radius: 15px;
   margin-left: 2%;
   font-family: 'Leckerli One', cursive;  
+}
+
+selecionado {
+  background-color:red;
 }
 
 .voltar {

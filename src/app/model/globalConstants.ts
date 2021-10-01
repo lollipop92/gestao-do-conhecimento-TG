@@ -1,3 +1,4 @@
+import { Aprendizagem } from "./aprendizagem";
 import { BaseConhecimento } from "./base-conhecimento";
 import { Config } from "./config";
 import { Usuario } from "./usuario";
@@ -16,5 +17,7 @@ export class GlobalConstant {
     public static vigenciaBaseConhecimento: string
     public static baseConhecimentoSelecionada: BaseConhecimento
     public static baseConhecimentoEditar: boolean
+
+    public static aprendizagemSelecionada: Aprendizagem
 
 }

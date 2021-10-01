@@ -1,0 +1,38 @@
+h1 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    color:#1b1744;
+    position: absolute; 
+    top: 12%;
+    left: 46%;
+    width: max-content;
+  }
+
+img {
+    background-color: #1b1744;
+    position: absolute;
+    top: 2%;
+    left: 36%;
+    width: 10%;
+    
+}
+
+#icone{  
+  width: 30px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 1px;
+  font-size: 32px;
+}
+
+#novo:hover {
+  background-color: #1b1744;
+  color: white;
+}
+
+button {
+  font-size: 22px;
+  margin-left: 25px;
+  margin-bottom: 50px;
+}

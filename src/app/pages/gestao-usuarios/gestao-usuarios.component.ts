@@ -34,9 +34,7 @@ export class GestaoUsuariosComponent implements OnInit {
       dados => this.usuarios = dados
     );
 
-     this.gestaoUsuariosService.listarConfigs().subscribe(
-      dados => this.configs = dados      
-     ); 
+     
 
   }
 
@@ -70,9 +68,6 @@ export class GestaoUsuariosComponent implements OnInit {
     this.router.navigate(['/editar-usuario'])
   }
 
-  OnEditConfig(config : Config){
-    GlobalConstant.configSelecionada = config;
-    this.router.navigate(['/editar-configuracoes'])
-  }
+ 
 
 }

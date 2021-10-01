@@ -31,7 +31,7 @@ font-size: 22px;
 color: #9ecfc9;
 }
 
-input, select {
+.inputSelect {
 border:2px #fed151 solid;
 background: transparent;
 color: #1b1744;  
@@ -75,8 +75,43 @@ padding: 0px 100px;
 
 }
 
+.iconeSort {
+  font-size: 32px;
+  float: right;
+  margin-top: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  color: #1b1744;
+}
+
+.iconeFilter {  
+  font-size: 30px; 
+  margin-top: 30px;  
+  float: right;
+  margin-right: 8px;
+  color: #1b1744;
+  
+  } 
+
+  .inputFilter {
+    float: right;
+    margin-top: 30px;
+    margin-right: 105px;
+    border:2px #fed151 solid;
+    background: transparent;
+    color: #1b1744;  
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    outline: none;
+    padding-left: 10px;  
+    }
+
+
+
 .coluna {
   width: 230px;
+  text-align: left;
 }
 
 .float-right{
@@ -118,4 +153,6 @@ button:disabled,
       transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
       cursor: not-allowed;
 }
+
+
 

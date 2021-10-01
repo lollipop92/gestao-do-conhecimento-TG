@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Aprendizagem } from 'src/app/model/aprendizagem';
+import { GlobalConstant } from 'src/app/model/globalConstants';
 import { FundoTelaBotoesComponent } from '../fundo-tela-botoes/fundo-tela-botoes.component';
 
 
@@ -9,7 +11,8 @@ import { FundoTelaBotoesComponent } from '../fundo-tela-botoes/fundo-tela-botoes
 })
 export class AprendizagemComponent implements OnInit {
 
-  etapa : any = 1
+  etapaComponente : any = 1
+  aprendizagem = new Aprendizagem;
   
 
   constructor( ) { }
@@ -18,20 +21,21 @@ export class AprendizagemComponent implements OnInit {
   icone = "../../../assets/imgs/aprendizagem.JPG"
 
   ngOnInit(): void {
+    this.aprendizagem = GlobalConstant.aprendizagemSelecionada
   }
 
   etapa1(){
-   this.etapa = 1;   
+   this.etapaComponente = 1;   
     
   }
   etapa2(){
-    this.etapa = 2;
+    this.etapaComponente = 2;
   }
   etapa3(){
-    this.etapa = 3;
+    this.etapaComponente = 3;
   }
   etapa4(){
-    this.etapa = 4;
+    this.etapaComponente = 4;
   }
 
 }

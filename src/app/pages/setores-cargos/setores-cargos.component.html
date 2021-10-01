@@ -1,0 +1,81 @@
+<form class="content" #fSetor="ngForm" (ngSubmit)="criarSetor()">
+  <div class="form-group">
+
+    <label for="setor">Setor</label>
+
+    <input type="text" class="inputSelect" 
+    id="setor1" name="setor1" [(ngModel)]= "setor.setor" #setor1="ngModel"
+    required placeholder="Digite o setor" 
+       >
+
+
+    <button type="submit" class="btn btn-outline-dark" [disabled]="fSetor.invalid" id="novo" title="Criar">
+      <span id="icone" class="material-icons">add</span>Criar
+    </button>
+
+  </div>
+</form>
+
+
+<div class="tabela" id="setor">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Setor</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let setor of setores">
+        <th scope="row">{{ setor.id }}</th>
+        <td class="colunaMaior">{{ setor.setor }}</td>
+        <td>
+          <span class="float-right">
+           <!-- <button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEditSetor(setor)">Editar</button>-->
+
+            <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDeleteSetor(setor)">Remover</button>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<form class="content" #fCargo="ngForm" (ngSubmit)="criarCargo()">
+
+  <label for="cargo">Cargo</label>
+
+  <input type="text" required placeholder="Digite o cargo" class="inputSelect" id="cargo1"
+     name="cargo1" [(ngModel)]= "cargo.cargo" #cargo1="ngModel">
+
+
+  <button type="submit" class="btn btn-outline-dark" [disabled]="fCargo.invalid" id="novo" title="Criar">
+    <span id="icone" class="material-icons">add</span>Criar
+  </button>
+</form>
+
+<div class="tabela" id="cargo">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cargo</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cargo of cargos">
+        <th scope="row">{{ cargo.id }}</th>
+        <td class="colunaMaior">{{ cargo.cargo }}</td>
+        <td>
+          <span class="float-right">
+            <!--<button class="btn btn-outline-warning mb-1 btn-sm" (click)="onEditCargo(cargo)">Editar</button>-->
+
+            <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDeleteCargo(cargo)">Remover</button>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

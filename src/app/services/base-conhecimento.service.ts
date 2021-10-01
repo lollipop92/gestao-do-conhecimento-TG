@@ -21,7 +21,6 @@ export class BaseConhecimentoService {
   
   public criarBaseConhecimento(baseConhecimento: BaseConhecimento): Observable<any> {
 
-    console.log(baseConhecimento)
     return this._http.post(this.apiUrl, baseConhecimento);
 
   }

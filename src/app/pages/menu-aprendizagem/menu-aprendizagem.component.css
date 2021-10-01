@@ -73,3 +73,35 @@ input, select {
   float: right;
 }
 
+.iconeSort {
+  font-size: 32px;
+  float: right;
+  margin-top: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  color: #1b1744;
+}
+
+.iconeFilter {  
+  font-size: 30px; 
+  margin-top: 30px;  
+  float: right;
+  margin-right: 8px;
+  color: #1b1744;
+  
+  } 
+
+  .inputFilter {
+    float: right;
+    margin-top: 30px;
+    margin-right: 105px;
+    border:2px #fed151 solid;
+    background: transparent;
+    color: #1b1744;  
+    border-radius: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 17px;
+    outline: none;
+    padding-left: 10px;  
+    }
+

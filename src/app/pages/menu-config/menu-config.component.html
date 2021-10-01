@@ -1,0 +1,49 @@
+<app-fundo-tela-botoes>
+</app-fundo-tela-botoes>
+<h1>{{titulo}}</h1>
+<img src="{{icone}}" alt="icone">
+
+<section>
+
+    <button type="button" class="btn btn-outline-dark" id="gestaoUsuarios" title="Gestão de usuários" (click)= configuracao1()>
+        <span id="icone" class="material-icons" >
+            groups
+        </span>
+        Gestão de Usuários
+    </button>
+
+    <button type="button" class="btn btn-outline-dark" id="logs" title="Visualizar Logs" (click)= configuracao2()>
+        <span id="icone" class="material-icons">
+            monitor_heart
+        </span>
+        Processos Criticos
+    </button>
+
+    <button type="button" class="btn btn-outline-dark" id="logs" title="Setores e Cargos" (click)= configuracao3() >
+        <span id="icone" class="material-icons">
+            work_outline
+        </span>
+        Setores e Cargos
+    </button>
+
+    <button type="button" class="btn btn-outline-dark" id="logs" title="Váriaveis do Sistema" (click)= configuracao4()>
+        <span id="icone" class="material-icons">
+            tune
+        </span>
+        Váriaveis do Sistema
+    </button>
+
+    <button type="button" class="btn btn-outline-dark" id="logs" title="Logs do Sistema" (click)= configuracao5()>
+        <span id="icone" class="material-icons">
+            folder_open
+        </span>
+        Logs do Sistema
+    </button>
+</section>
+
+<section id="configuracoes">
+    <app-gestao-usuarios *ngIf="configuracao == 1" ></app-gestao-usuarios>
+    <app-setores-cargos *ngIf="configuracao == 3"></app-setores-cargos>
+    <app-variaveis-sistema *ngIf="configuracao == 4"></app-variaveis-sistema>
+    <app-logs *ngIf="configuracao == 5"></app-logs>
+</section>

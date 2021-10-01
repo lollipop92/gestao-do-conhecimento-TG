@@ -29,6 +29,10 @@ import { Etapa4Component } from './pages/etapa4/etapa4.component';
 import { MenuAprendizagemComponent } from './pages/menu-aprendizagem/menu-aprendizagem.component';
 import { MenuBaseConhecimentoComponent } from './pages/menu-base-conhecimento/menu-base-conhecimento.component';
 import { BaseConhecimentoVisualizarComponent } from './pages/base-conhecimento-visualizar/base-conhecimento-visualizar.component';
+import { MenuConfigComponent } from './pages/menu-config/menu-config.component';
+import { VariaveisSistemaComponent } from './pages/variaveis-sistema/variaveis-sistema.component';
+import { SetoresCargosComponent } from './pages/setores-cargos/setores-cargos.component';
+import { ProcessosCriticosComponent } from './pages/processos-criticos/processos-criticos.component';
 
 
 
@@ -56,6 +60,10 @@ import { BaseConhecimentoVisualizarComponent } from './pages/base-conhecimento-v
     MenuAprendizagemComponent,
     MenuBaseConhecimentoComponent,
     BaseConhecimentoVisualizarComponent,
+    MenuConfigComponent,
+    VariaveisSistemaComponent,
+    SetoresCargosComponent,
+    ProcessosCriticosComponent,
   
   ],
   imports: [
