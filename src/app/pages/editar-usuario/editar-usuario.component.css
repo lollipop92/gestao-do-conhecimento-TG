@@ -31,7 +31,7 @@ label {
     color: #9ecfc9;
   }
   
-  input {
+  input, select {
     border:2px #fed151 solid;
     background: transparent;
     color: #1b1744;

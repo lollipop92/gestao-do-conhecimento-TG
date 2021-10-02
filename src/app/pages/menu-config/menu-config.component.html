@@ -43,6 +43,7 @@
 
 <section id="configuracoes">
     <app-gestao-usuarios *ngIf="configuracao == 1" ></app-gestao-usuarios>
+    <app-processos-criticos *ngIf="configuracao == 2"></app-processos-criticos>
     <app-setores-cargos *ngIf="configuracao == 3"></app-setores-cargos>
     <app-variaveis-sistema *ngIf="configuracao == 4"></app-variaveis-sistema>
     <app-logs *ngIf="configuracao == 5"></app-logs>

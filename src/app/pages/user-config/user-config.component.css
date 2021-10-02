@@ -26,7 +26,7 @@ label {
   color: white;
 }
 
-input {
+input, select {
   border:2px #fed151 solid;
   background: transparent;
   color: white;
@@ -296,5 +296,7 @@ transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
   position: absolute; 
   right: 25px; 
   top: 80px }
+
+  
 
 

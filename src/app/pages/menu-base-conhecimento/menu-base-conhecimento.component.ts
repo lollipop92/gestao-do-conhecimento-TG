@@ -4,8 +4,10 @@ import { Router } from '@angular/router';
 import { BsModalService,BsModalRef } from 'ngx-bootstrap/modal';
 import { BaseConhecimento } from 'src/app/model/base-conhecimento';
 import { GlobalConstant } from 'src/app/model/globalConstants';
+import { ProcessoEtapa } from 'src/app/model/processo-etapa';
 import { Usuario } from 'src/app/model/usuario';
 import { BaseConhecimentoService } from 'src/app/services/base-conhecimento.service';
+import { ProcessoEtapaService } from 'src/app/services/processo-etapa.service';
 import { UserConfigService } from 'src/app/services/user-config.service';
 
 
@@ -21,6 +23,7 @@ export class MenuBaseConhecimentoComponent implements OnInit {
     private router: Router, 
     private BaseConhecimentoService:BaseConhecimentoService,
     private UserConfigService:UserConfigService,
+    private ProcessoEtapaService : ProcessoEtapaService,
     private modalService: BsModalService
     
   ) { }
@@ -32,11 +35,14 @@ export class MenuBaseConhecimentoComponent implements OnInit {
   usuariosAutor : Usuario[] = []
   deleteModalRef?: BsModalRef;
   @ViewChild('deleteModal', { static: true }) deleteModal: any;
-
+  processosEtapas: ProcessoEtapa[] = [];
+  processoEtapa = new ProcessoEtapa();
+  options: string[] = []
 
 
   ngOnInit(): void {
     this.getBasesConhecimento();
+    this.listarProcessosEtapas();
   }
 
   criar(form:any){
@@ -105,6 +111,42 @@ export class MenuBaseConhecimentoComponent implements OnInit {
 
   onDeclineDelete() {
     this.deleteModalRef?.hide();
+  }
+
+  listarProcessosEtapas(){
+
+    this.ProcessoEtapaService.listarProcessosEtapas().subscribe(
+      dados => {        
+        this.processosEtapas = dados
+        
+        var select = document.getElementById("processo")!;
+        var el = document.createElement("option")
+        select.appendChild(el);
+
+        var select2 = document.getElementById("etapa")!;
+        var el2 = document.createElement("option")
+        select2.appendChild(el2);
+        
+        for (let dado of dados) {
+
+          var opt = dado.processo;          
+          var el = document.createElement("option");                    
+          el.textContent = opt;
+          el.value = opt; 
+          select.appendChild(el);
+          
+
+          var opt2 = dado.etapa;
+          var el2 = document.createElement("option");
+          el2.textContent = opt2;
+          el2.value = opt2;
+          select2.appendChild(el2);      
+
+
+        }
+
+      }
+    );
   }
 
 }

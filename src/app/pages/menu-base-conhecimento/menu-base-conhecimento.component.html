@@ -8,7 +8,7 @@
     Processo é obrigatório
   </div>
   <div class="erro" *ngIf="!etapa.valid && etapa.touched">
-    Processo é obrigatório
+    Etapa é obrigatório
   </div>
   <div class="erro" *ngIf="!vigencia.valid && vigencia.touched">
     Data de vigência é obrigatório
@@ -19,18 +19,20 @@
 
   <div class="form-group">
     <label id="labelProcesso" for="processo">Processo</label>
-
-    <input type="text" [(ngModel)]="baseConhecimento.processo" required placeholder="Digite o nome do processo"
-      class="inputSelect" id="processo" #processo="ngModel" name="processo">
-
-
+    <!--<input type="text" [(ngModel)]="baseConhecimento.processo" required placeholder="Digite o nome do processo"
+      class="inputSelect" id="processo" #processo="ngModel" name="processo">-->    
+    <select [(ngModel)]="baseConhecimento.processo" 
+    class="inputSelect" id="processo" #processo="ngModel" name="processo" required
+    ></select>
+    
 
     <label for="etapa">Etapa</label>
-
-    <input type="text" [(ngModel)]="baseConhecimento.etapa" required placeholder="Digite o nome da etapa"
-      class="inputSelect" id="etapa" #etapa="ngModel" name="etapa">
-
-
+    <!--<input type="text" [(ngModel)]="baseConhecimento.etapa" required placeholder="Digite o nome da etapa"
+      class="inputSelect" id="etapa" #etapa="ngModel" name="etapa">-->
+    <select [(ngModel)]="baseConhecimento.etapa" 
+    class="inputSelect" id="etapa" #etapa="ngModel" name="etapa" required
+    ></select>
+    
 
     <label for="vigencia">Vigência</label>
 

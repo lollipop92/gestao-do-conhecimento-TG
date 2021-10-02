@@ -1,55 +1,51 @@
 <section id="main_content">
     <h1>CADASTRO</h1>
-    <form class="content" #f="ngForm" (ngSubmit)="cadastrar(f)">        
+    <form class="content" #f="ngForm" (ngSubmit)="cadastrar(f)">
         <div class="form-group">
-            <label id="labelNome" for="nome">NOME</label>     
-            <input type="text" [(ngModel)]= "usuario.nome" required 
-            placeholder="Informe seu nome" 
-            name="nome" id="nome" #nome="ngModel">        
+            <label id="labelNome" for="nome">NOME</label>
+            <input type="text" [(ngModel)]="usuario.nome" required placeholder="Informe seu nome" name="nome" id="nome"
+                #nome="ngModel">
             <div *ngIf="!nome.valid && nome.touched" id="erroNome">
                 Nome é obrigatório
-            </div>   
-        </div>  
+            </div>
+        </div>
         <div class="form-group">
             <label id="labelEmail" for="email">EMAIL</label>
-            <input type="email" [(ngModel)]= "usuario.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            placeholder="Informe seu email coorporativo" 
-            name="email" id="email" #email="ngModel">
+            <input type="email" [(ngModel)]="usuario.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                placeholder="Informe seu email coorporativo" name="email" id="email" #email="ngModel">
             <div *ngIf="email.errors && (!email.valid && email.touched)">
                 <div *ngIf="email.errors.required" id="erroEmail">
-                Email é obrigatório
+                    Email é obrigatório
                 </div>
                 <div *ngIf="email.errors.pattern" id="erroEmail">
-                Email inválido
+                    Email inválido
                 </div>
-            </div>      
-        </div >
+            </div>
+        </div>
         <div class="form-group">
             <label id="labelSenha" for="senha">SENHA</label>
-            <input type="password" [(ngModel)]="usuario.senha" 
-            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            placeholder="Informe sua senha de acesso" 
-            name="senha" id="senha" #senha="ngModel">
-            <input type="password" [(ngModel)]="usuario.senhaConfirmar" 
-            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            placeholder="Confirme sua senha de acesso" 
-            name="senhaConfirmar" id="senhaConfirmar" #senhaConfirmar="ngModel">
+            <input type="password" [(ngModel)]="usuario.senha" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                placeholder="Informe sua senha de acesso" name="senha" id="senha" #senha="ngModel">
+            <input type="password" [(ngModel)]="usuario.senhaConfirmar" required
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="Confirme sua senha de acesso"
+                name="senhaConfirmar" id="senhaConfirmar" #senhaConfirmar="ngModel">
             <div *ngIf="senha.errors && (!senha.valid && senha.touched)">
                 <div *ngIf="senha.errors.required" id="erroSenha">
-                Senha é obrigatório
+                    Senha é obrigatório
                 </div>
                 <div *ngIf="senha.errors.pattern" id="erroSenha2">
-                Deve conter número, letra maiúscula e minúscula e pelo menos 8 caracteres
+                    Deve conter número, letra maiúscula e minúscula e pelo menos 8 caracteres
                 </div>
-            </div>            
+            </div>
             <div *ngIf="senha.valid && senha.touched && !senhaConfirmar.valid && senhaConfirmar.touched" id="erroSenha">
-                Confirmar senha é obrigatório                
-            </div>             
-            <div *ngIf="senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)" id="erroSenha">      
-                 As senhas devem ser idênticas 
-            </div>                            
+                Confirmar senha é obrigatório
+            </div>
+            <div *ngIf="senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)"
+                id="erroSenha">
+                As senhas devem ser idênticas
+            </div>
         </div>
-
+        <!--
         <div class="form-group">
             <label id="labelSetor" for="setor">SETOR</label>   
             <input type="text" [(ngModel)]="usuario.setor"  
@@ -59,6 +55,22 @@
         <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
             Setor é obrigatório
         </div>
+    -->
+    <div class="form-group">
+        <label id="labelSetor" for="setor">SETOR</label>
+
+        <select [(ngModel)]="usuario.setor" required name="setor" id="setor"
+                #setor="ngModel"
+                [ngClass]="{'active' : setor.valid === true}"
+                ></select>
+            <option value=""></option>
+
+        <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
+            Setor é obrigatório
+        </div>
+    </div>
+
+        <!--
         <div class="form-group">
             <label id = "labelCargo" for="cargo">CARGO</label>   
             <input type="text" [(ngModel)]="usuario.cargo" 
@@ -68,16 +80,29 @@
         <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
             Cargo é obrigatório
         </div> 
-        <button class="start" type="submit" [disabled]="!f.valid || senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)"> START </button>                
+        -->
+        <div class="form-group box">
+            <label id="labelCargo" for="cargo">CARGO</label>
+
+            <select [(ngModel)]="usuario.cargo" required name="cargo" id="cargo"
+                #cargo="ngModel"
+                [ngClass]="{'active' : cargo.valid === true}"
+                ></select>
+            <option value=""></option>
+
+            <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
+                Cargo é obrigatório
+            </div>
+        </div>
+
+        <button class="start" type="submit"
+            [disabled]="!f.valid || senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value)">
+            START </button>
     </form>
     <div *ngIf="f.valid">
         <small id="sucesso">{{mensagemSucesso}}</small>
-        <small id="erro">{{mensagemErro.message}}</small> 
-        <small id="erro">{{mensagemErroDominio}}</small>     
-    </div> 
+        <small id="erro">{{mensagemErro.message}}</small>
+        <small id="erro">{{mensagemErroDominio}}</small>
+    </div>
     <button class="exit" type="button" routerLink="/login">SAIR</button>
 </section>
-
-
-
-

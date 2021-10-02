@@ -38,7 +38,13 @@ input, select {
   font-family: 'Ubuntu', sans-serif;
   font-size: 17px;
   outline: none;
-  padding-left: 10px;  
+  padding-left: 10px; 
+  width: 250px;
+   
+}
+
+#treinado, #treinador {
+  width: 50px;
 }
 
 #novo {

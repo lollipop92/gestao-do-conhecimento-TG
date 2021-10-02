@@ -1,0 +1,71 @@
+.tabela{
+    padding: 0px 100px;
+    margin-bottom: 50px;
+    
+  }
+  
+  .float-right{
+    float: right;
+  }
+  
+  form{
+    margin-left: 120px;
+    }
+  
+    label{
+      margin-left: 20px;
+      margin-right: 5px;  
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #9ecfc9;
+      }
+      
+      .inputSelect {
+      border:2px #fed151 solid;
+      background: transparent;
+      color: #1b1744;  
+      border-radius: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 17px;
+      outline: none;
+      padding-left: 10px;  
+      }
+      
+      #novo {
+      margin-left: 20px;
+      color: #1b1744;
+      border-color: #1b1744;
+      font-weight: bolder;
+      border-radius: 50px; 
+      font-size: 18px; 
+      
+      }
+  
+      #icone{  
+        width: 20px;
+        float: left;
+        margin-right: 5px;
+        margin-top: 1px;
+        }
+        
+        #novo:hover {
+        background-color: #1b1744;
+        color: white;
+        }
+  
+              
+        button:disabled,
+            button[disabled]{
+              color: #1b1744;
+              background-color: #cccccc;
+              backface-visibility: hidden;
+              border: 3px solid transparent;
+              border-radius: 40px; 
+              border-color: #1b1744;
+              transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+              cursor: not-allowed;
+        }
+  
+  
+  

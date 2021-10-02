@@ -6,6 +6,8 @@ import { AprendizagemService } from 'src/app/services/aprendizagem.service';
 import { BaseConhecimentoService } from 'src/app/services/base-conhecimento.service';
 import { DatePipe } from '@angular/common';
 import { GlobalConstant } from 'src/app/model/globalConstants';
+import { ProcessoEtapaService } from 'src/app/services/processo-etapa.service';
+import { ProcessoEtapa } from 'src/app/model/processo-etapa';
 
 @Component({
   selector: 'app-menu-aprendizagem',
@@ -20,6 +22,7 @@ export class MenuAprendizagemComponent implements OnInit {
     private router: Router,
     private AprendizagemService: AprendizagemService,
     private BaseConhecimentoService: BaseConhecimentoService,
+    private ProcessoEtapaService : ProcessoEtapaService,
     private datePipe: DatePipe
   ) { }
 
@@ -31,10 +34,14 @@ export class MenuAprendizagemComponent implements OnInit {
   mensagemSucesso = "";
   mensagemError = "";
   hoje:any = new Date();
+  processosEtapas: ProcessoEtapa[] = [];
+  processoEtapa = new ProcessoEtapa();
+  options: string[] = []
   
 
   ngOnInit(): void {
     this.getListaAprendizagem();
+    this.listarProcessosEtapas();
   }
 
   getListaAprendizagem() {
@@ -131,6 +138,37 @@ export class MenuAprendizagemComponent implements OnInit {
   editarAprendiazagem(aprendizagem : Aprendizagem){
     GlobalConstant.aprendizagemSelecionada = aprendizagem
     this.router.navigate(['/aprendizagem'])
+  }
+
+  listarProcessosEtapas(){
+
+    this.ProcessoEtapaService.listarProcessosEtapas().subscribe(
+      dados => {        
+        this.processosEtapas = dados
+        
+        var select = document.getElementById("processo")!;
+        var select2 = document.getElementById("etapa")!;
+        
+        for (let dado of dados) {
+
+          var opt = dado.processo;          
+          var el = document.createElement("option");                    
+          el.textContent = opt;
+          el.value = opt; 
+          select.appendChild(el);
+          
+
+          var opt2 = dado.etapa;
+          var el2 = document.createElement("option");
+          el2.textContent = opt2;
+          el2.value = opt2;
+          select2.appendChild(el2);      
+
+
+        }
+
+      }
+    );
   }
 
 }

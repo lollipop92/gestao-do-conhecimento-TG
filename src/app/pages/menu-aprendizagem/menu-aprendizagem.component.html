@@ -8,27 +8,23 @@
     <select 
     [(ngModel)]="aprendizagem.processo" required id="processo" #processo="ngModel"
             name="processo">
-      <option value="1"></option>
-      <option value="2">Processo 1</option>
-      <option value="3">Processo 2</option>
-      <option value="4">Processo 3</option>
+      <option value=""></option>
+      
     </select>
     <label for="">Etapa</label>
     <select 
     [(ngModel)]="aprendizagem.etapa" required id="etapa" #etapa="ngModel"
     name="etapa">
-      <option value="1"></option>
-      <option value="2">Etapa 1</option>
-      <option value="3">Etapa 2</option>
-      <option value="4">Etapa 3</option>
+      <option value=""></option>
+      
     </select>
-    <label for="">Treinador</label>
-    <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$ " placeholder="treinador@example.com"
+    <label for="">ID Treinador</label>
+    <input type="text" required 
     [(ngModel)]="aprendizagem.treinador" required id="treinador" #treinador="ngModel"
     name="treinador"
       >
-    <label for="">Treinado</label>
-    <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$ " placeholder="treinado@example.com"
+    <label for="">ID Treinado</label>
+    <input type="email" required 
     [(ngModel)]="aprendizagem.treinado" required id="treinado" #treinado="ngModel"
     name="treinado"
       >

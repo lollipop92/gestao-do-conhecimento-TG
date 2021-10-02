@@ -7,6 +7,7 @@
 	  background-size: cover;
   }
 
+
   h1 {
     font-family: 'Spartan', sans-serif;
 	  font-weight: 800;
@@ -26,7 +27,7 @@
     color: white;
   }
 
-  input {
+  input, select {
     border:2px #fed151 solid;
     background: transparent;
     color: white;
@@ -233,18 +234,17 @@
 
     }
 
-    button:disabled,
-    button[disabled]{
-      color: #1b1744;
-      background-color: #cccccc;
-      backface-visibility: hidden;
-      border: 3px solid transparent;
-      border-radius: 40px;
-      box-shadow: 6px 6px 0px 1px #999999;
+    select {
+      color: gray;
+    }
+
+    .active {
+      color: white;
+    }
+
     
-      border-color: #1b1744;
-      transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
-      cursor: not-allowed;
-}
+
+
+
 
  

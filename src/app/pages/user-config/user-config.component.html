@@ -49,24 +49,54 @@
                  As senhas devem ser idênticas 
             </div>                            
         </div>
+        <!--
         <div class="form-group">
             <label id="labelSetor" for="setor">SETOR</label>   
             <input type="text" [(ngModel)]="usuario.setor"  
             required placeholder="Informe seu setor "
             name="setor" id="setor" #setor="ngModel">
-            <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
-                Setor é obrigatório
-            </div>
-        </div>        
+        </div>
+        <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
+            Setor é obrigatório
+        </div>
+    -->
+    <div class="form-group">
+        <label id="labelSetor" for="setor">SETOR</label>
+
+        <select [(ngModel)]="usuario.setor" required name="setor" id="setor"
+                #setor="ngModel" 
+                ></select>
+            <option value=""></option>
+
+        <div *ngIf="!setor.valid && setor.touched" id="erroSetor">
+            Setor é obrigatório
+        </div>
+    </div>
+
+        <!--
         <div class="form-group">
             <label id = "labelCargo" for="cargo">CARGO</label>   
             <input type="text" [(ngModel)]="usuario.cargo" 
             required placeholder="Informe seu cargo"
             name="cargo" id="cargo" #cargo="ngModel">
+        </div> 
+        <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
+            Cargo é obrigatório
+        </div> 
+        -->
+        <div class="form-group box">
+            <label id="labelCargo" for="cargo">CARGO</label>
+
+            <select [(ngModel)]="usuario.cargo" required name="cargo" id="cargo"
+                #cargo="ngModel"                
+                ></select>
+            <option value=""></option>
+
             <div *ngIf="!cargo.valid && cargo.touched" id="erroCargo">
                 Cargo é obrigatório
             </div>
-        </div>          
+        </div>
+
         <button class="start" type="submit" [disabled]="!f.valid || (senhaConfirmar.touched && senhaConfirmar.valid && senha.valid && (senhaConfirmar.value != senha.value))"> SALVAR </button>                
     </form>
         <div *ngIf="f.valid">

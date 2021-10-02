@@ -25,20 +25,20 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastrar', component: CadastrarComponent},
   {path: 'esqueci-senha', component: EsqueciSenhaComponent},
-  {path: 'menu', component:MenuComponent },
+  {path: 'menu', component:MenuComponent, canActivate:[AuthGuard] },
   {path: 'user-config' , component:UserConfigComponent, canActivate:[AuthGuard]},
-  {path: 'base-conhecimento' , component:BaseConhecimentoComponent},
-  {path: 'base-conhecimento-visualizar' , component:BaseConhecimentoVisualizarComponent},
-  {path: 'menu_base-conhecimento' , component:MenuBaseConhecimentoComponent},
-  {path: 'aprendizagem' , component:AprendizagemComponent},
-  {path: 'menu_aprendizagem' , component:MenuAprendizagemComponent},
-  {path: 'monitor' , component:MonitorComponent},
-  {path: 'logs', component:LogsComponent},
-  {path: 'gestao-usuarios', component:GestaoUsuariosComponent},
-  {path: 'fundo-tela-botoes', component:FundoTelaBotoesComponent},
-  {path: 'editar-usuario', component:EditarUsuarioComponent},
-  {path: 'editar-configuracoes', component:EditarConfigComponent},
-  {path: 'menu-configuracoes', component:MenuConfigComponent}
+  {path: 'base-conhecimento' , component:BaseConhecimentoComponent, canActivate:[AuthGuard]},
+  {path: 'base-conhecimento-visualizar' , component:BaseConhecimentoVisualizarComponent, canActivate:[AuthGuard]},
+  {path: 'menu_base-conhecimento' , component:MenuBaseConhecimentoComponent, canActivate:[AuthGuard]},
+  {path: 'aprendizagem' , component:AprendizagemComponent, canActivate:[AuthGuard]},
+  {path: 'menu_aprendizagem' , component:MenuAprendizagemComponent, canActivate:[AuthGuard]},
+  {path: 'monitor' , component:MonitorComponent, canActivate:[AuthGuard]},
+  {path: 'logs', component:LogsComponent, canActivate:[AuthGuard]},
+  {path: 'gestao-usuarios', component:GestaoUsuariosComponent, canActivate:[AuthGuard]},
+  {path: 'fundo-tela-botoes', component:FundoTelaBotoesComponent, canActivate:[AuthGuard]},
+  {path: 'editar-usuario', component:EditarUsuarioComponent, canActivate:[AuthGuard]},
+  {path: 'editar-configuracoes', component:EditarConfigComponent, canActivate:[AuthGuard]},
+  {path: 'menu-configuracoes', component:MenuConfigComponent, canActivate:[AuthGuard]}
 
 ];
 

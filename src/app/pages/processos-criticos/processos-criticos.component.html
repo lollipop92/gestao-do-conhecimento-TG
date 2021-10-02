@@ -1,1 +1,50 @@
-<p>processos-criticos works!</p>
+<form class="content" #fSetor="ngForm" (ngSubmit)="criarProcessoEtapa()" >
+    <div class="form-group">
+  
+      <label for="setor">Processo</label>
+  
+      <input type="text" class="inputSelect" 
+      id="processo" name="processo" [(ngModel)]= "processoEtapa.processo" #processo="ngModel"
+      required placeholder="Digite o processo" 
+         >
+
+         <label for="setor">Cargo</label>
+  
+      <input type="text" class="inputSelect" 
+      id="etapa" name="etapa" [(ngModel)]= "processoEtapa.etapa" #etapa="ngModel"
+      required placeholder="Digite o etapa" 
+         >
+  
+  
+      <button type="submit" class="btn btn-outline-dark" id="novo" title="Criar">
+        <span id="icone" class="material-icons">add</span>Criar
+      </button>
+  
+    </div>
+  </form>
+
+<div class="tabela" id="setor">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Processo</th>
+          <th scope="col">Etapa</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let processoEtapa of processosEtapas">
+          <th scope="row"> {{processoEtapa.id}} </th>
+          <td> {{ processoEtapa.processo }} </td>
+          <td> {{ processoEtapa.etapa }} </td>
+          <td>
+            <span class="float-right">         
+  
+              <button class="btn btn-outline-danger mb-1 btn-sm" (click)="onDeleteProcessoEtapa(processoEtapa)">Remover</button>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
