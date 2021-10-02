@@ -1,11 +1,11 @@
 export class Usuario {
-    id:any = null;
-    nome:any = null; 
-    email:any = null; 
-    senha:any = null;
-    senhaConfirmar:any = null;
-    setor:any= null; 
-    cargo:any= null;
+    id?:any ;
+    nome?:any ;
+    email?:any ;
+    senha?:any ;
+    senhaConfirmar?:any ;
+    setor?:any;
+    cargo?:any;
 
     constructor() {}     
     

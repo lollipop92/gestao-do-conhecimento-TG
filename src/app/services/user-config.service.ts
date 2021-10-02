@@ -15,19 +15,23 @@ export class UserConfigService {
       'Content-Type': 'application/json'
     })
   };
+  usuario: any = null;
 
-  constructor(private _http: HttpClient) { }
+  constructor(private _http: HttpClient) {    
+    let usuario:any = sessionStorage.getItem("usuario");
+    this.usuario = Object.assign(new Usuario(), JSON.parse(usuario));
+   }
 
-  public getUserFromRemote(usuario: Usuario): Observable<any> {
+  public getUserFromRemote(): Observable<any> {    
 
-    return this._http.get<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado);
+    return this._http.get<any>(this.apiUrl + "/" + this.usuario.id);
 
   }
 
 
-  public editUserFromRemote(usuario: Usuario): Observable<any> {
+  public editUserFromRemote(usuario1: Usuario): Observable<any> {
 
-    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.usuarioLogado, usuario);
+    return this._http.put<any>(this.apiUrl + "/" + this.usuario.id, usuario1);
 
   }
 

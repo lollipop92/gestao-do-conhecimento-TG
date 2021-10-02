@@ -7,6 +7,7 @@ import { EditarConfigService } from 'src/app/services/editar-config.service';
 import { LogsService } from 'src/app/services/logs.service';
 import { LogsComponent } from '../logs/logs.component';
 import { HttpClientModule } from '@angular/common/http';
+import { Usuario } from 'src/app/model/usuario';
 
 @Component({
   selector: 'app-editar-config',
@@ -20,67 +21,73 @@ export class EditarConfigComponent implements OnInit {
   mensagemError = "";
   titulo = "Editar Configurações";
   icone = "../../../assets/imgs/gestao-usuarios.JPG";
-  
+
   logViewConfig: Logs = {
-    id:null,
+    id: null,
     acao: "Visualizar",
-    timeStamp:"",
-    idUsuario:GlobalConstant.usuarioLogado,
-    entidade:"Configurações",
-    descricao:"Usuario visualizou tabela de configurações" 
+    timeStamp: "",
+    idUsuario: null,
+    entidade: "Configurações",
+    descricao: "Usuario visualizou tabela de configurações"
   }
 
   logChangeConfig: Logs = {
-    id:null,
+    id: null,
     acao: "Edição",
-    timeStamp:"",
-    idUsuario:GlobalConstant.usuarioLogado,
-    entidade:"Configurações",
-    descricao:"Usuario editou tabela de configurações" 
+    timeStamp: "",
+    idUsuario: null,
+    entidade: "Configurações",
+    descricao: "Usuario editou tabela de configurações"
   }
 
   constructor(
     private router: Router,
-    private editarConfigService : EditarConfigService,
-    private logsService : LogsService
-  ) { }
+    private editarConfigService: EditarConfigService,
+    private logsService: LogsService
+  ) {
+    let usuario: any = sessionStorage.getItem("usuario");
+    usuario = Object.assign(new Usuario(), JSON.parse(usuario));
+    this.logChangeConfig.idUsuario = usuario.id;
+    this.logViewConfig.idUsuario = usuario.id;
+  }
 
   ngOnInit(): void {
     this.getConfig();
   }
 
-  getConfig(){
+
+
+  getConfig() {
     this.editarConfigService.getConfigFromRemote(GlobalConstant.configSelecionada).subscribe(
       data => {
-        this.registrarLog(this.logViewConfig);        
-        this.config = data        
+        this.registrarLog(this.logViewConfig);
+        this.config = data
       }
     );
   }
 
-  editarConfig(){
-    
+  editarConfig() {
+
     this.editarConfigService.editConfigFromRemote(this.config).subscribe(
       data => {
-        
+
         console.log("Resposta recebida");
-        this.mensagemSucesso = "Configuração atualizada com sucesso";        
+        this.mensagemSucesso = "Configuração atualizada com sucesso";
         this.registrarLog(this.logChangeConfig);
-        if (this.config.id = 1)
-        {
+        if (this.config.id = 1) {
           GlobalConstant.dominio = this.config.valueConfig;
         }
       },
 
       error => {
-        
+
         console.log("Exceção aconteceu");
         this.mensagemError = "Não foi possivél atualizar a configuração."
       }
     );
   }
 
-  registrarLog(log : Logs){
+  registrarLog(log: Logs) {
     this.logsService.registrarLog(log).subscribe(
       data => console.log("log registrado")
     )

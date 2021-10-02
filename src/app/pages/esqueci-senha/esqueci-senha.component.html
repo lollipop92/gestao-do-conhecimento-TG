@@ -13,7 +13,7 @@
             <button class="enviar" type="submit" [disabled]="!f.valid">ENVIAR</button>
         </div>
     </form>        
-    <button class="exit" type="button" routerLink="/login">SAIR</button>
+    <button class="exit" type="button" (click)="logout()">SAIR</button>
 </section>
 
 

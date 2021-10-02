@@ -1,6 +1,6 @@
 <section id="main_content">
     <h1>CADASTRO</h1>
-    <form class="content" #f="ngForm" (ngSubmit)="cadastrar(f)">
+    <form class="content" #f="ngForm" (ngSubmit)="cadastrar()">
         <div class="form-group">
             <label id="labelNome" for="nome">NOME</label>
             <input type="text" [(ngModel)]="usuario.nome" required placeholder="Informe seu nome" name="nome" id="nome"
@@ -100,9 +100,10 @@
             START </button>
     </form>
     <div *ngIf="f.valid">
-        <small id="sucesso">{{mensagemSucesso}}</small>
+        <!--<small id="sucesso">{{mensagemSucesso}}</small>
         <small id="erro">{{mensagemErro.message}}</small>
-        <small id="erro">{{mensagemErroDominio}}</small>
+        <small id="erro">{{mensagemErroDominio}}</small>-->
+        <small [ngClass]="(messageType == 'success')?'success':'error'">{{message}}</small> 
     </div>
-    <button class="exit" type="button" routerLink="/login">SAIR</button>
+    <button class="exit" type="button" (click)="logout()">SAIR</button>
 </section>

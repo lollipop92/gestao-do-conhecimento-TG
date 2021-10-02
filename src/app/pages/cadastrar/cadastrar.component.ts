@@ -16,7 +16,10 @@ import { SetoresCargosService } from 'src/app/services/setores-cargos.service';
 })
 export class CadastrarComponent implements OnInit {
 
-  usuario = new Usuario();
+  usuario:Usuario = new Usuario();
+  message:string = "";
+  messageType:string = "error";
+  
   mensagemSucesso = "";
   mensagemErro: any;
   usuarioEmail: string = "";
@@ -24,8 +27,6 @@ export class CadastrarComponent implements OnInit {
   setores: Setor[] = [];
   cargos: Cargo[] = [];
   options: string[] = []
-  
-
 
 
   constructor(
@@ -40,6 +41,7 @@ export class CadastrarComponent implements OnInit {
     
   }
 
+  /** 
   cadastrar(f: any) {
 
     if (this.verificarEmail()) {
@@ -71,7 +73,41 @@ export class CadastrarComponent implements OnInit {
     this.mensagemSucesso = ""
     this.mensagemErro = "";
 
-  }
+  }*/
+
+  cadastrar() {
+
+    
+
+    if(this.verificarEmail()){
+
+      this.CadastroService.RegisterUserFromRemote(this.usuario).toPromise().then(data => {
+
+          this.message = "Cadastro realizado. Por favor, faça login.";
+
+          this.messageType = "success";          
+          
+          setTimeout( () => {this.router.navigate(['/login'])}, 2000)
+          
+          
+
+      }).catch( error => {
+
+        this.message = error.error;
+
+        this.messageType = "error";
+
+      });
+
+    } else{
+
+      this.message = "Dominio não autorizado! Favor utilizar "+GlobalConstant.dominio;
+
+      this.messageType = "error";
+
+    }}
+
+  
 
   verificarEmail() {
     return this.usuario.email.includes(GlobalConstant.dominio);
@@ -137,6 +173,13 @@ export class CadastrarComponent implements OnInit {
 
       }
     );
+  }
+
+  logout(){
+
+    sessionStorage.removeItem("usuario");
+    this.router.navigateByUrl("/login");
+
   }
 
 

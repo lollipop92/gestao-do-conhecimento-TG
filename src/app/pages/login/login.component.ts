@@ -28,33 +28,25 @@ export class LoginComponent implements OnInit {
 
   
   fazerLogin(){
-    this.LoginService.loginUserFromRemote(this.usuario).subscribe(
-      data => {
+    this.LoginService.loginUserFromRemote(this.usuario).toPromise().then(data => { 
         
-        GlobalConstant.usuarioLogado = data.id;
-        GlobalConstant.usuarioNomeLogado = data.nome;
-        console.log(GlobalConstant.usuarioAutenticado)
-        GlobalConstant.usuarioAutenticado = true;
-        console.log(GlobalConstant.usuarioAutenticado)
-        this.router.navigate(['/menu'])
-        console.log("Resposta recebida")
-      },
-      error => {
-        console.log("Exceção aconteceu");
-        this.mensagem = "Email e senha inválidos. Favor verificar suas informações."
-        console.log(GlobalConstant.usuarioAutenticado)
-        GlobalConstant.usuarioAutenticado = false;
+        delete data["senha"];
+        sessionStorage.setItem("usuario", JSON.stringify(data));
 
-      }
+        this.router.navigate(['/menu'])
+        
+      }).catch(error => {
+
+        this.mensagem = "Email e senha inválidos. Favor verificar suas informações.";
+        
+      }     
 
       
     );
 
       
   }
+  
 
-  usuarioEstaAutenticado(){
-    return GlobalConstant.usuarioAutenticado;
-  }
 
 }

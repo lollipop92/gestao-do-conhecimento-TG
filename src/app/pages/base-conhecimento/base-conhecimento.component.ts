@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { empty } from 'rxjs';
 import { BaseConhecimento } from 'src/app/model/base-conhecimento';
 import { GlobalConstant } from 'src/app/model/globalConstants';
+import { Usuario } from 'src/app/model/usuario';
 import { BaseConhecimentoService } from 'src/app/services/base-conhecimento.service';
 
 
@@ -34,9 +35,7 @@ export class BaseConhecimentoComponent implements OnInit {
   ngOnInit(): void {
     this.baseConhecimento.processo = GlobalConstant.processoBaseConhecimento 
     this.baseConhecimento.etapa = GlobalConstant.etapaBaseConhecimento
-    this.baseConhecimento.vigencia = GlobalConstant.vigenciaBaseConhecimento
-
-    console.log(GlobalConstant.usuarioLogado)
+    this.baseConhecimento.vigencia = GlobalConstant.vigenciaBaseConhecimento    
     
   }
 
@@ -48,8 +47,10 @@ export class BaseConhecimentoComponent implements OnInit {
 
   criarBaseConhecimento(){     
     
-        
-        this.baseConhecimento.autor = GlobalConstant.usuarioLogado;
+    let usuario:any = sessionStorage.getItem("usuario");
+    usuario = Object.assign(new Usuario(), JSON.parse(usuario));
+    
+        this.baseConhecimento.autor = usuario.id;
         this.BaseConhecimentoService.criarBaseConhecimento(this.baseConhecimento).subscribe(
           async data => {
               this.mensagemSucesso = "Base de conhecimento criada com sucesso! Você será direcionado para lista.";

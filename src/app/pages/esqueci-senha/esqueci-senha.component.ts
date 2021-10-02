@@ -32,4 +32,11 @@ export class EsqueciSenhaComponent implements OnInit {
     )
   }
 
+  logout(){
+
+    sessionStorage.removeItem("usuario");
+    this.router.navigateByUrl("/login");
+
+  }
+
 }

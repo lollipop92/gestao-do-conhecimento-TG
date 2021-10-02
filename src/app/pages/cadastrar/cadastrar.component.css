@@ -156,7 +156,7 @@
     color: red;
   }
 
-  #erro {
+  .error {
     position: absolute;
     top: 500px;
     left:825px;
@@ -165,7 +165,7 @@
     color: red;
   }
 
-  #sucesso {
+  .success {
     position: absolute;
     top: 500px;
     left:895px;

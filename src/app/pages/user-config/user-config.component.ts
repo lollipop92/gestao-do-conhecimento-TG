@@ -59,7 +59,7 @@ export class UserConfigComponent implements OnInit {
 
   getUser(){    
     
-    this.UserConfigService.getUserFromRemote(this.usuario).subscribe(
+    this.UserConfigService.getUserFromRemote().subscribe(
       data => {
         this.usuario = data;
         
@@ -124,6 +124,13 @@ export class UserConfigComponent implements OnInit {
 
       }
     );
+  }
+
+  logout(){
+
+    sessionStorage.removeItem("usuario");
+    this.router.navigateByUrl("/login");
+
   }
 
  
