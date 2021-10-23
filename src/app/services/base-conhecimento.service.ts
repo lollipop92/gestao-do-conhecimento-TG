@@ -12,6 +12,7 @@ export class BaseConhecimentoService {
   constructor(private _http: HttpClient) { }
   apiUrl = "http://localhost:8050/baseConhecimento"
   apiUrl2 = "http://localhost:8050/api/v1"
+  apiUrl3 = "http://localhost:8050/upload"
   
 
   public getBaseConhecimento(): Observable<any> {
@@ -31,15 +32,30 @@ export class BaseConhecimentoService {
 
   }
 
-  public getUserFromRemote(usuario: any): Observable<any> {
-
-    return this._http.get<any>(this.apiUrl2 + "/" + usuario);
-
-  } 
-
   public remover(): Observable<any> {
     return this._http.delete(this.apiUrl + "/" +  GlobalConstant.baseConhecimentoSelecionada.id)
 
   }
+  
+
+  public salvarFile(file: any): Observable<any> {
+
+    let body = new FormData();
+    // Add file content to prepare the request
+    body.append("file", file);
+
+    return this._http.post(this.apiUrl3, file);
+
+  }  
+
+  public getUserFromRemote(usuario: any): Observable<any> {
+
+    return this._http.get<any>(this.apiUrl2 + "/" + usuario);
+
+  }
+
+
+
+
 
 }

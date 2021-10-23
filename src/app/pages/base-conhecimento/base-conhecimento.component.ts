@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { empty } from 'rxjs';
 import { BaseConhecimento } from 'src/app/model/base-conhecimento';
 import { GlobalConstant } from 'src/app/model/globalConstants';
 import { Usuario } from 'src/app/model/usuario';
@@ -45,12 +44,21 @@ export class BaseConhecimentoComponent implements OnInit {
     
   }
 
+  
+
   criarBaseConhecimento(){     
     
     let usuario:any = sessionStorage.getItem("usuario");
     usuario = Object.assign(new Usuario(), JSON.parse(usuario));
-    
-        this.baseConhecimento.autor = usuario.id;
+
+    this.BaseConhecimentoService.salvarFile(this.baseConhecimento.fluxograma).subscribe(
+      data => {
+        console.log("Arquivo salvo");
+        console.log(data);
+        this.baseConhecimento.fluxograma = data;
+        console.log(this.baseConhecimento)
+
+        /**this.baseConhecimento.autor = usuario.id;
         this.BaseConhecimentoService.criarBaseConhecimento(this.baseConhecimento).subscribe(
           async data => {
               this.mensagemSucesso = "Base de conhecimento criada com sucesso! Você será direcionado para lista.";
@@ -63,7 +71,14 @@ export class BaseConhecimentoComponent implements OnInit {
               this.mensagemError = "Não foi possivél criar a Base de Conhecimento, por favor tente mais tarde."
               this.mensagemSucesso = "";
             }
-        );
+        );**/
+      },
+      error => {
+        console.log("Arquivo não foi salvo")
+      }
+
+    )   
+        
     }
 
     sleep(ms:any){
