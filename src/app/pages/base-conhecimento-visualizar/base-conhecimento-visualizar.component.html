@@ -129,12 +129,13 @@
             title="Utilizando a fluxogramação descreva os passos que contribuíram para a realização desta etapa.">info</i><br>
 
         <small id="fluxo">ATENÇÃO - utilizar somente documento no modelo padrão</small><br>
-        <div class="erro" *ngIf="!fluxograma.valid && fluxograma.touched">
+        <div class="erro" *ngIf="baseConhecimento.fluxograma == null">
             É obrigatório anexar o fluxograma
         </div>
-
-        <input type="file" class="anexar" [(ngModel)]="baseConhecimento.fluxograma" required id="fluxograma"
-            #fluxograma="ngModel" name="fluxograma" [readonly]="isExibir" (change)="onChange($event)">
+        <input *ngIf="baseConhecimento.fluxograma == null" type="file" class="anexar" required id="fluxograma" name="fluxograma"
+        (change)="onChange($event)"
+        >
+        <button type="button" *ngIf="baseConhecimento.fluxograma != null" (click)="downloadArquivo()">Baixar Arquivo</button>
     </div>
 
     <div><br>

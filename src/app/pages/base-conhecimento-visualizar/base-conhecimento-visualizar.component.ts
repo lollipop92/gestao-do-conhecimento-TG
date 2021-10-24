@@ -45,7 +45,7 @@ export class BaseConhecimentoVisualizarComponent implements OnInit {
 
   onChange(event:any) { 
 
-    this.file = event.target.files[0]; 
+    this.baseConhecimento.fluxograma  = event.target.files[0]; 
   
 }
 
@@ -66,6 +66,14 @@ editarBaseConhecimento(){
       
   );
 
+}
+downloadArquivo(){
+  var element = document.createElement('a');
+  element.setAttribute('href', window.location.origin+'/files/0225edcc-9e75-4b07-814b-3cf06098e3fe');
+  element.setAttribute('download', window.location.origin+'/files/0225edcc-9e75-4b07-814b-3cf06098e3fe');
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
 }
 
 sleep(ms:any){
