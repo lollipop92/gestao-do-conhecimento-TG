@@ -4,15 +4,21 @@
           Neste passo o treinado terá a visão ampla do processo que irá participar, demonstrar o fluxograma e suas principais operações criticas favorecem o reconhecimento da importância do desempenho das suas tarefas, especialmente se o ensinado irá desenvolver alguma parte do processo critico é primordial frisar os motivos e pontos indispensáveis do processo, para que assim ele reconheça que as atividades que ele irá exercer possui um grande impacto no produto final e em toda organização.
     </div>    
     <div>
-        <input type="checkbox" id="aprendiz" name="aprendiz" value="X">
+        <input type="checkbox" id="saveAprendizCheckBox" name="saveAprendizCheckBox" #saveAprendizCheckBox
+        [checked]="saveAprendiz" 
+        (change)="onSaveAprendizChanged(saveAprendizCheckBox.checked)"
+        >
         <label for="aprendiz">Eu, treinado concordo que cumpri todos os requisitos citados acima</label><br>
     </div>
     <div>
-        <input type="checkbox" id="mestre" name="mestre" value="X">
+        <input type="checkbox" id="saveMestreCheckBox" name="saveMestreCheckBox" #saveMestreCheckBox
+        [checked]="saveMestre" 
+        (change)="onSaveMestreChanged(saveMestreCheckBox.checked)"
+     >
         <label for="mestre">Eu, treinador concordo que cumpri todos os requisitos citados acima.</label><br>
     </div>    
     <div>
-        <button>
+        <button (click)="salvar()">
             SALVAR</button>
     </div>
 </section>

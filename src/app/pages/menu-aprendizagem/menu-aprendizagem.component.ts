@@ -53,9 +53,8 @@ export class MenuAprendizagemComponent implements OnInit {
         for (let aprendizagem of this.listaAprendizagem) {
 
           this.BaseConhecimentoService.getUserFromRemote(aprendizagem.treinado).subscribe(
-            data => {
-              console.log(data.nome)
-              aprendizagem.treinado = data.nome
+            data => {              
+              aprendizagem.treinadoNome = data.nome
             },
             error => {
               console.log("error")
@@ -63,9 +62,8 @@ export class MenuAprendizagemComponent implements OnInit {
           )
 
           this.BaseConhecimentoService.getUserFromRemote(aprendizagem.treinador).subscribe(
-            data => {
-              console.log(data.nome)
-              aprendizagem.treinador = data.nome
+            data => {              
+              aprendizagem.treinadorNome = data.nome
             },
             error => {
               console.log("error")
@@ -74,19 +72,19 @@ export class MenuAprendizagemComponent implements OnInit {
 
           switch (aprendizagem.etapaIndice) {
             case 1:
-              aprendizagem.etapaIndice = "1 - Preparação";
+              aprendizagem.etapaIndiceNome = "1 - Preparação";
               break;
             case 2:
-              aprendizagem.etapaIndice = "2 - Introdução às operações";
+              aprendizagem.etapaIndiceNome = "2 - Introdução às operações";
               break;
             case 3:
-              aprendizagem.etapaIndice = "3 - Analise do desempenho";
+              aprendizagem.etapaIndiceNome = "3 - Analise do desempenho";
               break;
-            case 3:
-              aprendizagem.etapaIndice = "4 - Acompanhamento";
+            case 4:
+              aprendizagem.etapaIndiceNome = "4 - Acompanhamento";
               break;
             default:
-              aprendizagem.etapaIndice = "Completo";
+              aprendizagem.etapaIndiceNome = "Completo";
 
 
           }

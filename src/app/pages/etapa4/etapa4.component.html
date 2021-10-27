@@ -10,14 +10,21 @@
 
     </div>    
     <div>
-        <input type="checkbox" id="aprendiz" name="aprendiz" value="X">
+        <input type="checkbox" id="saveAprendizCheckBox" name="saveAprendizCheckBox" #saveAprendizCheckBox
+        [checked]="saveAprendiz" 
+        (change)="onSaveAprendizChanged(saveAprendizCheckBox.checked)"
+        >
         <label for="aprendiz">Eu, treinado concordo que cumpri todos os requisitos citados acima</label><br>
     </div>
     <div>
-        <input type="checkbox" id="mestre" name="mestre" value="X">
+        <input type="checkbox" id="saveMestreCheckBox" name="saveMestreCheckBox" #saveMestreCheckBox
+        [checked]="saveMestre" 
+        (change)="onSaveMestreChanged(saveMestreCheckBox.checked)"
+     >
         <label for="mestre">Eu, treinador concordo que cumpri todos os requisitos citados acima.</label><br>
     </div>    
     <div>
-        <button>SALVAR</button>
+        <button (click)="salvar()"
+        >SALVAR</button>
     </div>
 </section>
