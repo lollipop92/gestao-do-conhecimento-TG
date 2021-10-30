@@ -26,3 +26,19 @@ td, th {
   border: 1pt solid black;
   padding: 0.5rem;
 }
+
+.treinado{
+  height: 20px;
+  width: 20px;
+  background-color: #1366ff;
+  color:#fff;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 9pt;
+  font-family: 'Roboto', sans-serif;
+  cursor:pointer;
+}
