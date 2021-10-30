@@ -36,13 +36,14 @@ section {
 
     small {
       position: absolute;
-      left: 89.5%;   
+      right: 20px;
       text-align: center;
       font-size: 18px;
       font-weight: bolder;
       margin-top: 10px;
       font-family: 'Ubuntu', sans-serif;
       color: #1b1744;
+      white-space: nowrap;
     }
 
     i {
