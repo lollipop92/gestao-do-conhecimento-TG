@@ -52,13 +52,11 @@ export class BaseConhecimentoComponent implements OnInit {
     usuario = Object.assign(new Usuario(), JSON.parse(usuario));
 
     this.BaseConhecimentoService.salvarFile(this.baseConhecimento.fluxograma).subscribe(
-      data => {
+      (data) => {
         console.log("Arquivo salvo");
-        console.log(data);
         this.baseConhecimento.fluxograma = data;
-        console.log(this.baseConhecimento)
 
-        /**this.baseConhecimento.autor = usuario.id;
+        this.baseConhecimento.autor = usuario.id;
         this.BaseConhecimentoService.criarBaseConhecimento(this.baseConhecimento).subscribe(
           async data => {
               this.mensagemSucesso = "Base de conhecimento criada com sucesso! Você será direcionado para lista.";
@@ -68,12 +66,14 @@ export class BaseConhecimentoComponent implements OnInit {
 
             },
             error => {
+              console.log(error);
               this.mensagemError = "Não foi possivél criar a Base de Conhecimento, por favor tente mais tarde."
               this.mensagemSucesso = "";
             }
-        );**/
+        );
       },
       error => {
+        console.log(error);
         console.log("Arquivo não foi salvo")
       }
 

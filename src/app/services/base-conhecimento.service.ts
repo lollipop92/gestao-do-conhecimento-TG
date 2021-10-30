@@ -10,47 +10,49 @@ import { GlobalConstant } from 'src/app/model/globalConstants';
 export class BaseConhecimentoService {
 
   constructor(private _http: HttpClient) { }
-  apiUrl = "http://localhost:8050/baseConhecimento"
-  apiUrl2 = "http://localhost:8050/api/v1"
-  apiUrl3 = "http://localhost:8050/upload"
+  apiUrl = "http://localhost:8050"
   
 
   public getBaseConhecimento(): Observable<any> {
-    return this._http.get(this.apiUrl + "/all");
+    return this._http.get(`${this.apiUrl}/baseConhecimento/all`);
   }
 
   
   public criarBaseConhecimento(baseConhecimento: BaseConhecimento): Observable<any> {
 
-    return this._http.post(this.apiUrl, baseConhecimento);
+    return this._http.post(`${this.apiUrl}/baseConhecimento`, baseConhecimento);
 
   }
 
   public editarBaseConhecimento(baseConhecimento: BaseConhecimento): Observable<any> {
 
-    return this._http.put<any>(this.apiUrl + "/" + GlobalConstant.baseConhecimentoSelecionada.id, baseConhecimento);
+    return this._http.put<any>(`${this.apiUrl}/baseConhecimento/${GlobalConstant.baseConhecimentoSelecionada.id}`, baseConhecimento);
 
   }
 
   public remover(): Observable<any> {
-    return this._http.delete(this.apiUrl + "/" +  GlobalConstant.baseConhecimentoSelecionada.id)
+    return this._http.delete(`${this.apiUrl}/baseConhecimento/${GlobalConstant.baseConhecimentoSelecionada.id}`)
 
   }
-  
 
   public salvarFile(file: any): Observable<any> {
-
     let body = new FormData();
     // Add file content to prepare the request
     body.append("file", file);
+    let headers = new HttpHeaders();
+    headers.append("Content-Type","multipart/form-data");
+    return this._http.post(`${this.apiUrl}/upload`, body,{headers:headers,responseType:'text'});
 
-    return this._http.post(this.apiUrl3, file);
+  } 
 
-  }  
+  public getFile(id: any): Observable<any> {
+    return this._http.get(`${this.apiUrl}/files/${id}`);
+
+  } 
 
   public getUserFromRemote(usuario: any): Observable<any> {
 
-    return this._http.get<any>(this.apiUrl2 + "/" + usuario);
+    return this._http.get<any>(`${this.apiUrl}/api/v1/${usuario}`);
 
   }
 
