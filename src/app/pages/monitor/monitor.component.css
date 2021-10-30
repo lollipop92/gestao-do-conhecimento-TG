@@ -28,9 +28,9 @@ td, th {
 }
 
 .treinado{
-  height: 20px;
-  width: 20px;
-  background-color: #1366ff;
+  height: 30px;
+  width: 30px;
+  background-color: #9ecfc9;
   color:#fff;
   text-transform: uppercase;
   font-weight: 400;
@@ -39,6 +39,61 @@ td, th {
   justify-content: center;
   border-radius: 50%;
   font-size: 9pt;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
   cursor:pointer;
+}
+
+
+.processo {
+  font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fed151;
+    margin: 0px;
+    
+}
+
+.tituloAprendiz{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  min-width: 85px;
+  text-align: center;
+  color: #1b1744; 
+  font-weight: bolder;
+}
+
+.tituloTreinador {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  min-width: 85px;
+  text-align: center;
+  color: #1b1744; 
+  font-weight: bolder;
+}
+
+.tituloStatus {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  min-width: 100px;
+  text-align:center;
+  color: #1b1744; 
+  font-weight: bolder;
+}
+
+.tituloData{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 15px;
+  min-width: 150px;
+  text-align:end;
+  color: #1b1744; 
+  font-weight: bolder;
+}
+
+.etapas{
+  border-left:4px solid #9ecfc9;
+  color: #4c4c4c;
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
 }
