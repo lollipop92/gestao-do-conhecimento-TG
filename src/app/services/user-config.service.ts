@@ -28,6 +28,12 @@ export class UserConfigService {
 
   }
 
+  public checkUserFromRemote(userId:any): Observable<any> {    
+
+    return this._http.get<any>(this.apiUrl + "/" + userId);
+
+  }
+
 
   public editUserFromRemote(usuario1: Usuario): Observable<any> {
 

@@ -14,6 +14,8 @@ export class AprendizagemComponent implements OnInit {
 
   etapaComponente : any = 1
   aprendizagem = new Aprendizagem;
+  message:string = "";
+  messageType:string = "";
   
 
   constructor(
@@ -26,20 +28,25 @@ export class AprendizagemComponent implements OnInit {
   ngOnInit(): void {
     this.aprendizagem = GlobalConstant.aprendizagemSelecionada
     this.etapaComponente = this.aprendizagem.etapaIndice;
+    this.message = ""
   }
 
   etapa1(){
-   this.etapaComponente = 1;   
+   this.etapaComponente = 1;
+   this.message = ""   
     
   }
   etapa2(){
     this.etapaComponente = 2;
+    this.message = ""
   }
   etapa3(){
     this.etapaComponente = 3;
+    this.message = ""
   }
   etapa4(){
     this.etapaComponente = 4;
+    this.message = ""
   }
 
   salvar(etapa1:any){
@@ -53,9 +60,13 @@ export class AprendizagemComponent implements OnInit {
     this.aprendizagemService.editarAprendizagem().subscribe(
       data => {
         console.log("Editado com sucesso")
+        this.message = "Alterado com sucesso.";
+          this.messageType = "success"; 
       },
       error => {
         console.log("Não editado com sucesso")
+        this.message = error.error;
+        this.messageType = "error";
       }
 
     )
@@ -72,9 +83,13 @@ export class AprendizagemComponent implements OnInit {
     this.aprendizagemService.editarAprendizagem().subscribe(
       data => {
         console.log("Editado com sucesso")
+        this.message = "Alterado com sucesso.";
+          this.messageType = "success";
       },
       error => {
         console.log("Não editado com sucesso")
+        this.message = error.error;
+        this.messageType = "error";
       }
 
     )
@@ -91,9 +106,13 @@ export class AprendizagemComponent implements OnInit {
     this.aprendizagemService.editarAprendizagem().subscribe(
       data => {
         console.log("Editado com sucesso")
+        this.message = "Alterado com sucesso.";
+          this.messageType = "success";
       },
       error => {
         console.log("Não editado com sucesso")
+        this.message = error.error;
+        this.messageType = "error";
       }
 
     )
@@ -112,9 +131,13 @@ export class AprendizagemComponent implements OnInit {
     this.aprendizagemService.editarAprendizagem().subscribe(
       data => {
         console.log("Editado com sucesso")
+        this.message = "Alterado com sucesso.";
+          this.messageType = "success";
       },
       error => {
         console.log("Não editado com sucesso")
+        this.message = error.error;
+        this.messageType = "error";
       }
 
     )

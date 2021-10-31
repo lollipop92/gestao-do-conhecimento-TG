@@ -40,7 +40,6 @@ td, th {
   border-radius: 50%;
   font-size: 9pt;
   font-family: 'Ubuntu', sans-serif;
-  font-weight: bold;
   cursor:pointer;
 }
 
@@ -48,7 +47,7 @@ td, th {
 .processo {
   font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 26px;
     color: #fed151;
     margin: 0px;
     
@@ -95,5 +94,5 @@ td, th {
   color: #4c4c4c;
   font-size: 10pt;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Sans', sans-serif;
 }

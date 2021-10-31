@@ -2,12 +2,31 @@
 </app-fundo-tela-botoes>
 <h1>{{titulo}}</h1>
 <img src="{{icone}}" alt="icone">
+
+<section id="errosCabecalho">
+  <div class="erro" *ngIf="!processo.valid && processo.touched">
+    Processo é obrigatório
+  </div>
+  <div class="erro" *ngIf="!etapa.valid && etapa.touched">
+    Etapa é obrigatório
+  </div>
+  <div class="erro" *ngIf="!treinador.valid && treinador.touched">
+    ID Treinador é obrigatório
+  </div>
+  <div class="erro" *ngIf="!treinado.valid && treinado.touched">
+    ID Treinado é obrigatório
+  </div>
+  <div [ngClass]="(messageType == 'success')?'success':'error'">
+    {{message}}
+  </div>
+</section>
+
 <form class="content" #f="ngForm" (ngSubmit)="criarAprendizagem()" >
   <div>
     <label for="">Processo</label>
     <select 
     [(ngModel)]="aprendizagem.processo" required id="processo" #processo="ngModel"
-            name="processo">
+            name="processo" > 
       <option value=""></option>
       
     </select>
@@ -28,7 +47,7 @@
     [(ngModel)]="aprendizagem.treinado" required id="treinado" #treinado="ngModel"
     name="treinado"
       >
-    <button type="submit" class="btn btn-outline-dark" id="novo" title="Criar">
+    <button type="submit" class="btn btn-outline-dark" [disabled]="f.invalid" id="novo" title="Criar">
       <span id="icone" class="material-icons">
         add
       </span>
@@ -37,12 +56,12 @@
   </div>
 </form>
 <div>
-  <input type="text" class="inputFilter">
+  <input type="text" id="myInput" (keyup)="myFunction()" placeholder="Pesquisar etapa" class="inputFilter">
   <i class="material-icons iconeFilter">filter_alt</i>
-  <i class="material-icons iconeSort">sort</i>
+  <!--<i class="material-icons iconeSort" (click)="sortTable()">sort</i>-->
 </div>
-<div class="tabela" id="Usuario">
-  <table class="table table-hover">
+<div class="tabela" id="myTable">
+  <table class="table table-hover header">
     <thead>
       <tr>
         <th scope="col">#</th>

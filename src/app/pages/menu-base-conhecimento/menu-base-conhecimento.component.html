@@ -46,15 +46,15 @@
   </div>
 
   <div>
-    <input type="text" class="inputFilter">
+    <input type="text" id="myInput" (keyup)="myFunction()" placeholder="Pesquisar etapa"class="inputFilter">
     <i class="material-icons iconeFilter">filter_alt</i>
-    <i class="material-icons iconeSort">sort</i>
+    <!--<i class="material-icons iconeSort">sort</i>-->
   </div>
 
 </form>
 
-<div class="tabela" id="Usuario">
-  <table class="table table-hover">
+<div class="tabela" id="myTable">
+  <table class="table table-hover header">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -70,7 +70,7 @@
         <th scope="row">{{baseConhecimento.id }}</th>
         <td>{{ baseConhecimento.processo }}</td>
         <td>{{ baseConhecimento.etapa }}</td>
-        <td>{{ baseConhecimento.vigencia }}</td>
+        <td>{{ baseConhecimento.vigencia|date:'dd/MM/yyyy' }}</td>
         <td>{{ baseConhecimento.autorNome }}</td>
         <td>
           <span class="float-right">

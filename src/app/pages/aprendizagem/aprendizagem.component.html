@@ -39,6 +39,7 @@
     <small id="btn"><button (click)= etapa3()>3</button></small>
     <small id="btn"><button (click)= etapa4()>4</button></small>
 </section>
+<small [ngClass]="(messageType == 'success')?'success':'error'">{{message}}</small>
 <section id="etapas">
     <app-etapa1 *ngIf="etapaComponente == 1" ></app-etapa1>
     <app-etapa2 *ngIf="etapaComponente == 2"></app-etapa2>

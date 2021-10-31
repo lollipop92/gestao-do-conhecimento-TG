@@ -112,6 +112,23 @@ label{
     margin-left: 65%;
 }
 
+#downloadArquivo {    
+  padding: 3px 15px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #1b1744;
+  background-color: #9ecfc9;
+  backface-visibility: hidden;
+  border: 3px solid transparent;
+  border-radius: 40px;
+  box-shadow: 6px 6px 0px 1px #1b1744;  
+  border-color: #1b1744;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+  margin-top: 1%;
+  
+}
+
 .erro {
   font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
