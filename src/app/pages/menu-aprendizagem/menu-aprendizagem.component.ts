@@ -149,6 +149,7 @@ export class MenuAprendizagemComponent implements OnInit {
             this.AprendizagemService.criarAprendizagem(this.aprendizagem).subscribe(
               async data => {
 
+                this.listaAprendizagem = [];
                 this.getListaAprendizagem();
 
                 console.log("Criado com sucesso.")
